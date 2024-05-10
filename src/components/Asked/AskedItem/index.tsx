@@ -2,8 +2,8 @@ import {useRef} from "react"
 
 import "./AskedItem.scss"
 
-const AskedItem = (props) => {
-  const contentEl = useRef()
+const AskedItem = (props: any) => {
+  const contentEl = useRef<null | any>(null)
   const {handleToggle, active, faq} = props
   const {question, id, answer} = faq
   return (
@@ -36,7 +36,7 @@ const AskedItem = (props) => {
         className={`asked-item__collapse ${active === id ? "show" : ""}`}
         style={
           active === id
-            ? {height: contentEl?.current?.scrollHeight}
+            ? {height: contentEl?.current.scrollHeight}
             : {height: "0px"}
         }
       >

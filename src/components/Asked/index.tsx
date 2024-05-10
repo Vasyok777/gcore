@@ -38,9 +38,9 @@ const Asked = () => {
         "It’s particularly useful for AI apps that need immediate processing and minimal delay, like generative AI and real-time object detection. It’s particularly useful for AI apps that need immediate processing and minimal delay, like generative AI and real-time object detection.",
     },
   ]
-  const [active, setActive] = useState(null)
+  const [active, setActive] = useState<null | any>(null)
 
-  const handleToggle = (index) => {
+  const handleToggle = (index: number) => {
     if (active === index) {
       setActive(null)
     } else {
