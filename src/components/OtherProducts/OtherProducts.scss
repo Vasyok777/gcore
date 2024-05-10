@@ -1,0 +1,188 @@
+.other-products {
+  padding: 110px 0;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 104.167%;
+    margin-bottom: 80px;
+  }
+  &__item {
+    padding: 40px;
+    padding-top: 120px;
+    border-radius: 40px;
+    border: 1px solid rgba(198, 198, 198, 0.19);
+    background: linear-gradient(
+        160deg,
+        rgba(165, 164, 255, 0.04) -6.01%,
+        rgba(90, 87, 255, 0.01) 38.62%
+      ),
+      #050505;
+    box-shadow: 0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
+    backdrop-filter: blur(204.8000030517578px);
+    &-img {
+      margin-bottom: 34px;
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 156px;
+      border: 1px solid #ffffff08;
+      background: #0d0d10;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+    & h6 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 130%;
+      margin-bottom: 12px;
+    }
+    & p {
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      font-variant: small-caps;
+      margin-bottom: 40px;
+    }
+    & a {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+  }
+}
+.other-products__item-ellips {
+  position: absolute;
+  bottom: 0;
+  animation: Rotate 10s linear infinite;
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  left: 0;
+}
+.other-products__inner {
+  & .other-products__item:nth-child(2) {
+    & .other-products__item-ellips {
+      animation: Rotate 7s linear infinite;
+    }
+  }
+  & .other-products__item:nth-child(3) {
+    & .other-products__item-ellips {
+      animation: Rotate-three 5s linear infinite;
+    }
+  }
+  & .other-products__item:nth-child(4) {
+    & .other-products__item-ellips {
+      animation: Rotate-reverse 3s linear infinite;
+    }
+  }
+  & .other-products__item:nth-child(5) {
+    & .other-products__item-ellips {
+      animation: img-rotate 12s linear infinite;
+    }
+  }
+  & .other-products__item:nth-child(6) {
+    & .other-products__item-ellips {
+      &:nth-child(6) {
+        animation: img-rotate 8s linear infinite;
+      }
+    }
+  }
+}
+@keyframes Rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Rotate-two {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes Rotate-three {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes Rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes Rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes Rotate-reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes circle-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@-webkit-keyframes circle-rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(405deg);
+  }
+}
+
+@keyframes img-rotate {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(-405deg);
+  }
+}
+
+@-webkit-keyframes img-rotate {
+  from {
+    -webkit-transform: rotate(-45deg);
+  }
+  to {
+    -webkit-transform: rotate(-405deg);
+  }
+}

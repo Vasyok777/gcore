@@ -1,0 +1,23 @@
+.root {
+  & h6 {
+    color: #fff2ea;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.25px;
+    margin-bottom: 30px;
+  }
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    & li {
+      & a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 128.571%;
+      }
+    }
+  }
+}

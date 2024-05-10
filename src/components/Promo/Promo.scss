@@ -1,0 +1,99 @@
+.promo {
+  padding-top: 120px;
+  &__bg {
+    width: 100%;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__undertitle {
+    display: inline-flex;
+    height: 34px;
+    padding: 10px 20px 10px 21px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 9.354px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: radial-gradient(
+        63.94% 63.94% at 50% 0%,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 20px;
+    & img {
+      width: 12.646px;
+      height: 14px;
+      transform: scale(6.5) translate(2px, -0.5px);
+    }
+  }
+  &__title {
+    background: radial-gradient(
+      123.44% 123.44% at 56.63% 100%,
+      #ececee 6.77%,
+      rgba(255, 255, 255, 0.45) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 68px;
+    font-weight: 600;
+    line-height: 70.588%;
+    margin-bottom: 29px;
+  }
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131.25%;
+    letter-spacing: -0.16px;
+    background: radial-gradient(
+      123.44% 123.44% at 56.63% 100%,
+      rgba(236, 236, 238, 0.5) 6.77%,
+      rgba(255, 255, 255, 0.22) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 566px;
+    margin: 0 auto 30px;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  &__btn {
+    border-radius: 28.219px;
+    border: 0.656px solid rgba(191, 191, 191, 0.1);
+    backdrop-filter: blur(19.6875px);
+    display: flex;
+    padding: 11px 20px;
+    align-items: flex-start;
+    gap: 10px;
+    color: #fff2ea;
+
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.25px;
+  }
+}

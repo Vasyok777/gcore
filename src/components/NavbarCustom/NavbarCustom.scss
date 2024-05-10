@@ -1,0 +1,27 @@
+.navbar-custom {
+  border-radius: 16px;
+  border: 1px solid rgba(80, 80, 80, 0.8);
+  background: #060607;
+  box-shadow:
+    0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  height: 48px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  width: max-content;
+  margin: 0 auto 70px;
+  &__sign {
+    border-radius: 12px;
+    background: #fff;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.07px;
+    padding: 12px;
+  }
+}

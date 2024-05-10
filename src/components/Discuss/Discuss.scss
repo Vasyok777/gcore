@@ -1,0 +1,62 @@
+.discuss {
+  position: relative;
+  &__block-top {
+    position: absolute;
+    top: 0;
+    background: #070708;
+    filter: blur(117.55000305175781px);
+    height: 511px;
+    left: 0;
+    right: 0;
+  }
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 100px 0 240px;
+    border-radius: 0px 0px 47.98px 47.98px;
+    background: radial-gradient(
+      98.87% 98.87% at 51.11% 1.13%,
+      rgba(7, 7, 8, 0) 0%,
+      #070708 53.31%,
+      #ff4c00 76.56%,
+      #ff9e50 86.46%,
+      #fff 100%
+    );
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 104.167%;
+    margin-bottom: 24px;
+  }
+  &__text {
+    color: rgba(255, 255, 255, 0.48);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    font-variant: small-caps;
+    max-width: 628px;
+    margin: 0 auto 40px;
+  }
+  &__link {
+    color: #070708;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 120%;
+    border-radius: 28.219px;
+    border: 0.656px solid rgba(191, 191, 191, 0.6);
+    background: #fff;
+    backdrop-filter: blur(19.6875px);
+    display: flex;
+    padding: 11px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    margin: 0 auto;
+  }
+}

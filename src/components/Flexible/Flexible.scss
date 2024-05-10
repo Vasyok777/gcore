@@ -1,0 +1,95 @@
+.flexible {
+  padding: 80px 136px;
+  background: #fff;
+  color: #070708;
+  &__wrapper {
+  }
+  &__undertitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 79px;
+    background: #0a0301;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 61.4px rgba(245, 149, 74, 0.45);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+    width: max-content;
+    margin: 0 auto 24px;
+  }
+  &__title {
+    color: #070708;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    margin-bottom: 78px;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  &__item {
+    position: relative;
+    border-radius: 40px;
+    &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 37.5%
+      );
+      display: inline-flex;
+      padding: 36px 34px 39px 24px;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 11px;
+      padding-bottom: 0;
+      height: 210px;
+      & h6 {
+        color: #27272a;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: -0.4px;
+      }
+      & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-left: 18px;
+      }
+      & li {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 131.25%;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #070708;
+          left: -12px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

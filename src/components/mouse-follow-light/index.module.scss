@@ -1,0 +1,10 @@
+.MouseFollowLight {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  opacity: 0.6;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 40;
+}

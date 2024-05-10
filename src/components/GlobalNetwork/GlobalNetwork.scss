@@ -1,0 +1,95 @@
+.global-network {
+  padding: 110px 0;
+  padding-bottom: 0;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__top {
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: radial-gradient(
+        63.94% 63.94% at 50% 0%,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(6px);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 23px;
+    & p {
+      padding-right: 12px;
+    }
+    &-img {
+      border-radius: 139.003px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(65, 65, 65, 0.07) 0%,
+        rgba(255, 255, 255, 0.19) 100%
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 116.667%;
+    max-width: 633px;
+    width: 100%;
+    margin: 0 auto 28px;
+  }
+  &__text {
+    color: rgba(255, 255, 255, 0.48);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    font-variant: small-caps;
+    max-width: 481px;
+    margin: 0 auto 56px;
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    transform: translateY(-150px);
+    &-box {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 133.333%;
+    }
+    &-svg {
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0);
+      box-shadow:
+        0px 2px 0px 0px rgba(255, 255, 255, 0.08),
+        0px 0px 8px 1px rgba(255, 255, 255, 0.04) inset;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & path {
+        fill: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}

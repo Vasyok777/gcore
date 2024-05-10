@@ -1,0 +1,173 @@
+.price {
+  padding: 40px 0 65px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-tabs {
+    border-radius: 41px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 4px 22px 0px rgba(255, 255, 255, 0.27) inset;
+    backdrop-filter: blur(20.299999237060547px);
+    display: inline-flex;
+    padding: 4px;
+    align-items: flex-start;
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto 28px;
+    & button {
+      display: flex;
+      width: 47px;
+      padding: 6px 0px 6px 0px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 193px;
+      &.active {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(65, 65, 65, 0.07) 46%,
+          rgba(255, 255, 255, 0.19) 100%
+        );
+      }
+    }
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 104.167%;
+    max-width: 859px;
+    margin: 0 auto 80px;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.25px;
+    &__text {
+      color: #737275;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.25px;
+      max-width: 670px;
+      margin: 0 auto;
+    }
+  }
+  &-item {
+    padding: 30px;
+    border-radius: 32px;
+    border: 1px solid #252525;
+    background: #040404;
+    box-shadow: 0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
+    backdrop-filter: blur(204.8000030517578px);
+    position: relative;
+    &.center {
+      border-radius: 32px;
+      border: 1px solid #252525;
+      background: #0c0c0c;
+      box-shadow:
+        0px 0px 13px 15px rgba(255, 76, 0, 0.06),
+        0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
+      backdrop-filter: blur(204.8000030517578px);
+      & .price-item__order {
+        border-radius: 28.219px;
+        border: 0.656px solid rgba(191, 191, 191, 0.1);
+        background: #ff4c00;
+        backdrop-filter: blur(19.6875px);
+        color: #fff2ea;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.25px;
+      }
+    }
+    &__decor {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      transform: translateX(-50%);
+    }
+    &__undertext {
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: -0.25px;
+      margin-bottom: 30px;
+    }
+    &__price {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 122%;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #1f1f1f;
+      text-align: center;
+      & span {
+        color: #727272;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 122%;
+        letter-spacing: -0.5px;
+      }
+    }
+    &__list {
+      padding: 30px 0 60px;
+      border-bottom: 1px solid #1f1f1f;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        & span {
+          color: #909090;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: -0.25px;
+        }
+      }
+    }
+    &__order {
+      border: none;
+      border-radius: 28.219px;
+      border: 0.656px solid rgba(191, 191, 191, 0.1);
+      background: #161616;
+      backdrop-filter: blur(19.6875px);
+      display: inline-flex;
+      padding: 17px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #fff2ea;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: -0.25px;
+      width: 100%;
+    }
+  }
+}
