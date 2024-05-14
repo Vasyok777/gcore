@@ -40,9 +40,7 @@ const AskedItem = (props: any) => {
             : {height: "0px"}
         }
       >
-        <div className="asked-item__body">
-          <p>{answer}</p>
-        </div>
+        <p className="asked-item__body">{answer}</p>
       </div>
     </div>
   )

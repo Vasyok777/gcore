@@ -43,6 +43,7 @@ const FooterCenter = () => {
           </svg>
         </button>
       </form>
+      <div className="footer-center__line-mob"></div>
     </div>
   )
 }

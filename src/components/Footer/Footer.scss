@@ -4,6 +4,9 @@
 
   background: #060607;
   padding-bottom: 80px;
+  @media (max-width: 768px) {
+    padding-bottom: 45px;
+  }
   &-bg {
     position: absolute;
     left: 0;
@@ -26,13 +29,19 @@
     top: 0;
     left: 0;
     right: 0;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   &-bottom {
     padding-top: 23px;
     display: flex;
     justify-content: space-between;
     position: relative;
-
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 24px;
+    }
     &__images {
       display: flex;
       align-items: center;
@@ -49,6 +58,9 @@
       gap: 16px;
       max-width: 540px;
       width: 100%;
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
       & p {
         color: #737275;
         font-size: 14px;

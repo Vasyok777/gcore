@@ -132,6 +132,7 @@ const FooterTop = () => {
           </p>
           <ListSocial />
         </div>
+        <div className="footer-top__left-line"></div>
       </div>
       <div className="footer-top__right">
         <FooterList title="Products" items={productsLink} />

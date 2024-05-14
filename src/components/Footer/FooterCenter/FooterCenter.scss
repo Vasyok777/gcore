@@ -4,6 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
   &__line {
     background: radial-gradient(
       70.71% 70.71% at 50% 50%,
@@ -15,11 +20,28 @@
     top: 0;
     left: 0;
     right: 0;
+    &-mob {
+      display: none;
+      background: radial-gradient(
+        70.71% 70.71% at 50% 50%,
+        rgba(169, 163, 194, 0.24) 0%,
+        rgba(169, 163, 194, 0) 100%
+      );
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
   }
   &__partners {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-shrink: 0;
   }
   &__text {
     max-width: 343px;
@@ -27,6 +49,9 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 131.25%;
+    @media (max-width: 768px) {
+      order: 1;
+    }
   }
   &__form {
     border-radius: 41px;
@@ -37,8 +62,13 @@
     display: flex;
     justify-content: space-between;
     padding-left: 24px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     & input {
       background: transparent;
+      border: none;
+      outline: none;
     }
     & button {
       border-radius: 72px;

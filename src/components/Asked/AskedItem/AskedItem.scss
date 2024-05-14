@@ -8,12 +8,22 @@
   backdrop-filter: blur(204.8000030517578px);
   padding: 24px;
   border-bottom: 1px solid transparent;
+  @media (max-width: 768px) {
+    padding: 16px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(198, 198, 198, 0.1);
+    border-bottom: 0;
+    border-radius: 20px;
+  }
   &.active {
     border-radius: 38px;
     border: 1px solid rgba(198, 198, 198, 0.19);
     background: #0d0d0e;
     box-shadow: 0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
     backdrop-filter: blur(204.8000030517578px);
+    @media (max-width: 768px) {
+      border-radius: 24px;
+    }
   }
   &__title {
     position: relative;
@@ -24,11 +34,17 @@
     font-weight: 600;
     line-height: 128%;
     letter-spacing: -0.5px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   &__box {
     display: flex;
     align-items: center;
     gap: 24px;
+    @media (max-width: 768px) {
+      gap: 14px;
+    }
     &.active {
       cursor: pointer;
       & .asked-item__svg {
@@ -38,6 +54,11 @@
     }
     & .asked-item__svg {
       transition: all 0.3s ease;
+      flex-shrink: 0;
+      @media (max-width: 768px) {
+        width: 30px;
+        height: 20px;
+      }
     }
     &:hover {
       cursor: pointer;
@@ -57,12 +78,14 @@
   flex: 1 1 auto;
   min-height: 1px;
   padding: 15px;
-  & p {
-    color: #909090;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 130%;
-    padding-left: 48px;
+  color: #909090;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 130%;
+  padding-left: 63px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding-left: 45px;
   }
 }
 .asked-item__header:hover {

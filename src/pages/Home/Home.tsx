@@ -10,6 +10,7 @@
 import Asked from "../../components/Asked"
 import Discuss from "../../components/Discuss"
 import Experience from "../../components/Experience"
+import Faster from "../../components/Faster"
 import Flexible from "../../components/Flexible"
 import GlobalNetwork from "../../components/GlobalNetwork"
 import OtherProducts from "../../components/OtherProducts/OtherProducts"
@@ -26,6 +27,7 @@ export const Home = () => {
   return (
     <main>
       <Promo />
+      <Faster />
       <Potential />
       {/* <Intro />
       <TickerLogos />

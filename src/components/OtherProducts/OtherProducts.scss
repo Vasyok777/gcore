@@ -1,9 +1,18 @@
 .other-products {
   padding: 110px 0;
+  @media (max-width: 768px) {
+    padding: 60px 0 45px;
+  }
   &__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__title {
     color: #fff;
@@ -12,6 +21,10 @@
     font-weight: 500;
     line-height: 104.167%;
     margin-bottom: 80px;
+    @media (max-width: 768px) {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
   }
   &__item {
     padding: 40px;
@@ -26,6 +39,11 @@
       #050505;
     box-shadow: 0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
     backdrop-filter: blur(204.8000030517578px);
+    @media (max-width: 768px) {
+      padding: 30px;
+      padding-top: 100px;
+      border-radius: 24px;
+    }
     &-img {
       margin-bottom: 34px;
       width: 70px;
@@ -38,6 +56,11 @@
       display: flex;
       position: relative;
       overflow: hidden;
+      @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 22px;
+      }
     }
     & h6 {
       color: #fff;
@@ -45,6 +68,9 @@
       font-weight: 600;
       line-height: 130%;
       margin-bottom: 12px;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
     & p {
       color: rgba(255, 255, 255, 0.48);
@@ -53,6 +79,10 @@
       line-height: 150%;
       font-variant: small-caps;
       margin-bottom: 40px;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        margin-bottom: 25px;
+      }
     }
     & a {
       display: flex;
@@ -70,6 +100,10 @@
   width: 70px;
   height: 70px;
   left: 0;
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .other-products__inner {
   & .other-products__item:nth-child(2) {

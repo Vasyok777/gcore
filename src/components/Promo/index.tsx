@@ -1,3 +1,4 @@
+import PromoBgMobImg from "../../assets/images/promo/mob-bg.png"
 import PromoBgImg from "../../assets/images/promo/promo_bg.png"
 import StarImg from "../../assets/images/promo/star.svg"
 
@@ -6,6 +7,7 @@ import "./Promo.scss"
 const Promo = () => {
   return (
     <section className="promo">
+      <img className="promo__bg-mob" src={PromoBgMobImg} alt="" />
       <div className="container">
         <div className="promo__wrapper">
           <div className="promo__undertitle">
@@ -16,7 +18,7 @@ const Promo = () => {
           <p className="promo__text">
             Boost your AI application’s speed and efficiency globally by
             bringing inference closer to your users. Enjoy customization and
-            cost-efficiency for a best-in-class inference experience. 
+            cost-efficiency for a best-in-class inference experience.
           </p>
           <div className="promo__buttons">
             <a href="#" className="btn-accent">

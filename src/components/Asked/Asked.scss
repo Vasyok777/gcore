@@ -1,5 +1,8 @@
 .asked {
   padding: 65px 0 170px;
+  @media (max-width: 768px) {
+    padding: 40px 0 100px;
+  }
   &__wrapper {
   }
   &__title {

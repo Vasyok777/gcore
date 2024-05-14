@@ -10,6 +10,11 @@
       rgba(255, 241, 217, 0) 43.13%
     );
   }
+  & .container {
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
   &__wrapper {
     padding: 70px 0 43px;
     display: flex;
@@ -20,6 +25,31 @@
       display: flex;
       justify-content: center;
       gap: 60px;
+      margin-bottom: 31px;
+      &-mob {
+        display: none;
+        @media (max-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          align-items: center;
+          width: 100%;
+          padding: 0 16px;
+        }
+      }
+      @media (max-width: 1024px) {
+        gap: 20px;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 18px;
+        padding: 0 16px;
+      }
+      & img {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
     }
   }
   &__title {
@@ -27,8 +57,10 @@
     text-align: center;
     font-size: 48px;
     font-weight: 600;
-    line-height: 56px; /* 116.667% */
-    margin-bottom: 31px;
+    line-height: 116.667%;
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
   }
   &__text {
     color: rgba(0, 0, 0, 0.5);
@@ -40,6 +72,10 @@
     max-width: 392px;
     width: 100%;
     margin-bottom: 60px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 36px;
+    }
   }
   &__box-ia {
     margin-bottom: 20px;
@@ -53,6 +89,9 @@
     padding: 4px;
     align-items: flex-start;
     gap: 4px;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   &__box-link {
     display: flex;
@@ -76,10 +115,29 @@
     box-shadow:
       0px 44.235px 92.808px 0px rgba(45, 48, 57, 0.09),
       0px 80px 62px -52px rgba(45, 48, 57, 0.06);
+    @media (max-width: 768px) {
+      // padding-bottom: 40px;
+      border-radius: 26px;
+      background: linear-gradient(
+        90deg,
+        rgba(193, 132, 255, 0.21) 0%,
+        rgba(255, 184, 127, 0.23) 100.31%
+      );
+      box-shadow:
+        0px 44.235px 92.808px 0px rgba(45, 48, 57, 0.09),
+        0px 80px 62px -52px rgba(45, 48, 57, 0.06);
+    }
     &__wrapper {
       border-radius: 32px;
       background: #fff;
       padding: 92px 70px 30px;
+      @media (max-width: 1024px) {
+        padding: 92px 40px 30px;
+      }
+      @media (max-width: 768px) {
+        padding: 92px 12px 12px;
+        border-radius: 24px;
+      }
     }
     &__text {
       color: #9b9b9b;
@@ -87,6 +145,17 @@
       font-size: 12px;
       font-weight: 500;
       line-height: 100%;
+      @media (max-width: 768px) {
+        display: none;
+      }
+      &.mob {
+        display: none;
+        @media (max-width: 768px) {
+          display: block;
+          padding: 8px 8px 12px;
+          color: #fff;
+        }
+      }
     }
     &__form {
       border-radius: 24px;
@@ -98,6 +167,10 @@
       align-items: center;
       width: 100%;
       margin-bottom: 20px;
+      @media (max-width: 768px) {
+        margin-bottom: 0px;
+        border-radius: 10px;
+      }
       & input {
         background: transparent;
         outline: none;
@@ -113,6 +186,12 @@
         padding: 14px;
         justify-content: center;
         align-items: center;
+        @media (max-width: 768px) {
+          padding: 10px;
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+        }
       }
     }
     &__box {
@@ -121,6 +200,10 @@
       gap: 16px;
       row-gap: 12px;
       margin-bottom: 24px;
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
     }
     &__item {
       border-radius: 20px;
@@ -129,6 +212,16 @@
       display: flex;
       gap: 20px;
       align-items: center;
+      &:nth-child(3) {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+      &:nth-child(4) {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
       &-img {
         border-radius: 12px;
         background: #d0e49b;
@@ -186,10 +279,17 @@
   flex-direction: column;
   gap: 24px;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 255px;
+    height: 255px;
+  }
   & h6 {
     color: #131313;
     font-size: 36px;
     font-weight: 600;
     line-height: 111.111%;
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 }

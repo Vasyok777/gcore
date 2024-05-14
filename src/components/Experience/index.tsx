@@ -23,10 +23,12 @@ const Experience = () => {
         <div className="container">
           <div className="experience__wrapper">
             <NavbarCustom />
-            <div className="experience__wrapper-title">
+            <div className="experience__wrapper-title-mob">
               <img src={LeftArrowImg} alt="" />
-              <h2 className="experience__title">Experience it now</h2>
               <img src={RightArrowImg} alt="" />
+            </div>
+            <div className="experience__wrapper-title">
+              <h2 className="experience__title">Experience it now</h2>
             </div>
             <p className="experience__text">
               Try Gcore Inference at the Edge for yourself using our playground.
@@ -151,6 +153,10 @@ const Experience = () => {
                   about people, places, or facts.
                 </p>
               </div>
+              <p className="experience-content__text mob">
+                Free Research Preview. May produce inaccurate information about
+                people, places, or facts.
+              </p>
             </div>
           </div>
         </div>

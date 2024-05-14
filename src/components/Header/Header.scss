@@ -1,5 +1,52 @@
 .header {
   padding: 24px 0;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    width: 100%;
+    border-radius: var(--0, 0px) var(--0, 0px) var(--500, 24px) var(--500, 24px);
+
+    border-right: 1px solid rgba(255, 255, 255, 0);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+
+    border-left: 1px solid rgba(255, 255, 255, 0);
+
+    background: rgba(12, 12, 12, 0.21);
+
+    backdrop-filter: blur(6px);
+    z-index: 5;
+  }
+  &-mob__button {
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      &-book {
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: rgba(39, 39, 39, 0.18);
+        backdrop-filter: blur(10px);
+        display: flex;
+        width: 119px;
+        height: 40px;
+        padding: 12px 15px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        color: #fff2ea;
+        text-align: center;
+        font-family: "Plus Jakarta Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.25px;
+        text-wrap: nowrap;
+      }
+    }
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -9,5 +56,8 @@
     gap: 8px;
     display: flex;
     align-items: center;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
