@@ -15,7 +15,9 @@ const Potential = () => {
     <section className="potential">
       <div className="container">
         <div className="potential__wrapper">
-          <NavbarCustom />
+          <div className="faster__wrapper-relative">
+            <NavbarCustom />
+          </div>
           <div className="potential__undertitle">
             <div className="potential__undertitle-img">
               <img src={StarImg} alt="" />

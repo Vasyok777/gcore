@@ -1,6 +1,183 @@
+import {useState} from "react"
+
+import FasterOne from "../../../assets/images/faster/box-1.svg"
+import FasterTwo from "../../../assets/images/faster/box-2.svg"
+import FasterThree from "../../../assets/images/faster/box-3.svg"
+import FasterFour from "../../../assets/images/faster/box-4.svg"
+import FasterFive from "../../../assets/images/faster/box-5.svg"
+import FasterSix from "../../../assets/images/faster/box-6.svg"
+import LampImg from "../../../assets/images/faster/lamp.svg"
+import ImgTwo from "../../../assets/images/faster/tabs-two.png"
+
+import FasterMiniLine from "./FasterMiniLine"
 import "./TwoContent.scss"
 
 const TwoContent = () => {
-  return <div>TwoContent</div>
+  const [isClassAdded, setIsClassAdded] = useState(false)
+  const handleClick = () => {
+    setIsClassAdded((prev) => !prev)
+  }
+  return (
+    <div className="faster-two">
+      <div className="faster-two__left">
+        <h6>
+          Here’s an example of how Inference at the Edge works in European
+          locations. The approach is broadly relevant worldwide.
+        </h6>
+        <p className="faster-two__left-text">
+          When a user sends a query, an edge node defines the route to the
+          closest available inference region with the lowest latency. In the
+          example, an end user in Middelburg connects to the ML model in the
+          nearby Amsterdam inference region, whereas an end user in Schweinfurt
+          is routed to Frankfurt (see “Basic query-result route.”)  
+        </p>
+        <div className="faster-two__left-text-bottom">
+          <p>
+            If the Amsterdam region is unavailable for some reason, its edge
+            node will redirect the user’s query to the next closest region in
+            Frankfurt (see “Alternative query-result route.”)
+          </p>
+        </div>
+      </div>
+      <div className="faster-two__right">
+        <img src={ImgTwo} alt="" className="faster-two__right-img" />
+        <div className="faster-two__right-box">
+          <div
+            className={`faster-two__right-content ${isClassAdded ? "active" : ""}`}
+          >
+            <div className="faster-two__right-item">
+              <h6>Frankfurt edge node</h6>
+              <div className="faster-node__box">
+                <div className="faster-node__box-one">
+                  <div className="faster-basic">
+                    <img src={FasterOne} alt="" />
+                    <p>NVIDIAL40S GPU</p>
+                  </div>
+                  <FasterMiniLine />
+                  <div className="faster-basic">
+                    <img src={FasterTwo} alt="" />
+                    <p>Local storage</p>
+                  </div>
+                  <div className="faster-basic">
+                    <img src={FasterThree} alt="" />
+                    <p>K8s</p>
+                  </div>
+                  <FasterMiniLine />
+                  <div className="faster-basic">
+                    <img src={FasterFour} alt="" />
+                    <p>Pod with ML model</p>
+                  </div>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    d="M4.30176 2.00023L8.10509 5.80357C8.55426 6.25273 8.55426 6.98773 8.10509 7.4369L4.30176 11.2402"
+                    stroke="#FFF2EA"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="faster-node__model">
+                  <img src={FasterFive} alt="" />
+                  <p>
+                    Model image
+                    <br /> registry
+                  </p>
+                </div>
+                <div className="faster-node__s-line">
+                  <FasterMiniLine />
+                </div>
+                <div className="faster-node__s">
+                  <img src={FasterSix} alt="" />
+                  <p>S3</p>
+                </div>
+              </div>
+            </div>
+            <div className="faster-node__line"></div>
+            <div className="faster-two__right-item">
+              <h6>Frankfurt edge node</h6>
+              <div className="faster-node__box">
+                <div className="faster-node__box-one">
+                  <div className="faster-basic">
+                    <img src={FasterOne} alt="" />
+                    <p>NVIDIAL40S GPU</p>
+                  </div>
+                  <FasterMiniLine />
+                  <div className="faster-basic">
+                    <img src={FasterTwo} alt="" />
+                    <p>Local storage</p>
+                  </div>
+                  <div className="faster-basic">
+                    <img src={FasterThree} alt="" />
+                    <p>K8s</p>
+                  </div>
+                  <FasterMiniLine />
+                  <div className="faster-basic">
+                    <img src={FasterFour} alt="" />
+                    <p>Pod with ML model</p>
+                  </div>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    d="M4.30176 2.00023L8.10509 5.80357C8.55426 6.25273 8.55426 6.98773 8.10509 7.4369L4.30176 11.2402"
+                    stroke="#FFF2EA"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="faster-node__model">
+                  <img src={FasterFive} alt="" />
+                  <p>
+                    Model image
+                    <br /> registry
+                  </p>
+                </div>
+                <div className="faster-node__s-line">
+                  <FasterMiniLine />
+                </div>
+                <div className="faster-node__s">
+                  <img src={FasterSix} alt="" />
+                  <p>S3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="faster-two__right-top" onClick={() => handleClick()}>
+            <div>
+              <img src={LampImg} alt="" />
+            </div>
+            <p>Amsterdam edge node</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M18.6801 13.9802L15.4701 10.7702L13.5101 8.80023C12.6801 7.97023 11.3301 7.97023 10.5001 8.80023L5.32007 13.9802C4.64007 14.6602 5.13007 15.8202 6.08007 15.8202H11.6901H17.9201C18.8801 15.8202 19.3601 14.6602 18.6801 13.9802Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 export default TwoContent

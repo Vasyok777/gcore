@@ -23,7 +23,9 @@ const Faster = () => {
     <section className="faster">
       <div className="container">
         <div className="faster__wrapper">
-          <NavbarCustom />
+          <div className="faster__wrapper-relative">
+            <NavbarCustom />
+          </div>
           <div className="faster-toggle">
             <button
               className={`faster-toggle__button ${state === 1 ? "active" : ""}`}

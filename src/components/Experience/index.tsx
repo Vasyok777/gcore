@@ -22,7 +22,9 @@ const Experience = () => {
       <div className="experience__inner">
         <div className="container">
           <div className="experience__wrapper">
-            <NavbarCustom />
+            <div className="faster__wrapper-relative">
+              <NavbarCustom />
+            </div>
             <div className="experience__wrapper-title-mob">
               <img src={LeftArrowImg} alt="" />
               <img src={RightArrowImg} alt="" />

@@ -13,7 +13,9 @@ const Price = () => {
     <section className="price">
       <div className="container">
         <div className="price__wrapper">
-          <NavbarCustom />
+          <div className="faster__wrapper-relative">
+            <NavbarCustom />
+          </div>
           <div className="price-tabs">
             <button className="active">€</button>
             <button>$</button>

@@ -6,6 +6,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &-relative {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      & .navbar-dropdown {
+        top: 48px;
+      }
+    }
   }
   &-toggle {
     display: flex;
