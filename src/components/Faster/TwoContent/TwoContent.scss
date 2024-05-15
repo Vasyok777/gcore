@@ -89,7 +89,7 @@
         #050505;
       box-shadow: 0px 2.091px 27.124px 2.613px rgba(75, 75, 75, 0.07) inset;
       backdrop-filter: blur(107.0341567993164px);
-      height: 444px;
+      min-height: 444px;
     }
     &-box {
       border-radius: 16px;
@@ -155,6 +155,9 @@
       top: 0;
       bottom: 0;
       object-fit: cover;
+      @media (max-width: 768px) {
+        height: 444px;
+      }
     }
   }
 }
@@ -183,6 +186,11 @@
       font-size: 12px;
       font-weight: 600;
       line-height: 120%;
+      & br {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
     }
   }
   &__s {
@@ -192,6 +200,9 @@
     margin-left: 11px;
     &-line {
       margin-left: auto;
+      @media (max-width: 768px) {
+        margin-left: 0px;
+      }
     }
     & p {
       color: #fff;
@@ -209,13 +220,22 @@
     padding: 8px;
     align-items: center;
     gap: 0px;
-
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
     & .faster-basic {
       padding: 0 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
+      @media (max-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 9px;
+      }
       & p {
         color: #fff;
         text-align: center;
@@ -225,5 +245,60 @@
         text-wrap: nowrap;
       }
     }
+  }
+}
+.faster-mini__line {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.faster-mob__block {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.faster-node__box {
+  display: flex;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+}
+.faster-basic__flex {
+  display: flex;
+}
+.faster-node__s-line {
+  &.mob-bottom {
+    & .faster-mini__line.mob {
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+  &-mob {
+    display: none;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: block;
+      stroke-width: 0.892px;
+      stroke: rgba(153, 153, 153, 0);
+      & svg {
+        width: 100%;
+      }
+    }
+  }
+}
+.faster-left {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.faster-bottom {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    transform: translateY(-15px);
   }
 }

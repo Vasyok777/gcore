@@ -10,6 +10,7 @@ import LampImg from "../../../assets/images/faster/lamp.svg"
 import ImgTwo from "../../../assets/images/faster/tabs-two.png"
 
 import FasterMiniLine from "./FasterMiniLine"
+import FasterMiniLineMob from "./FasterMiniLineMob"
 import "./TwoContent.scss"
 
 const TwoContent = () => {
@@ -54,108 +55,73 @@ const TwoContent = () => {
                     <p>NVIDIAL40S GPU</p>
                   </div>
                   <FasterMiniLine />
-                  <div className="faster-basic">
-                    <img src={FasterTwo} alt="" />
-                    <p>Local storage</p>
-                  </div>
-                  <div className="faster-basic">
-                    <img src={FasterThree} alt="" />
-                    <p>K8s</p>
+                  <FasterMiniLineMob />
+                  <div className="faster-basic__flex">
+                    <div className="faster-basic">
+                      <img src={FasterTwo} alt="" />
+                      <p>Local storage</p>
+                    </div>
+                    <div className="faster-basic">
+                      <img src={FasterThree} alt="" />
+                      <p>K8s</p>
+                    </div>
                   </div>
                   <FasterMiniLine />
+                  <FasterMiniLineMob />
                   <div className="faster-basic">
                     <img src={FasterFour} alt="" />
                     <p>Pod with ML model</p>
                   </div>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                >
-                  <path
-                    d="M4.30176 2.00023L8.10509 5.80357C8.55426 6.25273 8.55426 6.98773 8.10509 7.4369L4.30176 11.2402"
-                    stroke="#FFF2EA"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <div className="faster-node__model">
-                  <img src={FasterFive} alt="" />
-                  <p>
-                    Model image
-                    <br /> registry
-                  </p>
-                </div>
-                <div className="faster-node__s-line">
-                  <FasterMiniLine />
-                </div>
-                <div className="faster-node__s">
-                  <img src={FasterSix} alt="" />
-                  <p>S3</p>
+                <div className="faster-mob__block">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    className="faster-left"
+                  >
+                    <path
+                      d="M4.30176 2.00023L8.10509 5.80357C8.55426 6.25273 8.55426 6.98773 8.10509 7.4369L4.30176 11.2402"
+                      stroke="#FFF2EA"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    className="faster-bottom"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="33"
+                    viewBox="0 0 20 33"
+                    fill="none"
+                  >
+                    <path
+                      d="M20 30L15 27.1133V32.8868L20 30ZM0.5 0V23H1.5V0H0.5ZM8 30.5H15.5V29.5H8V30.5ZM0.5 23C0.5 27.1421 3.85786 30.5 8 30.5V29.5C4.41015 29.5 1.5 26.5899 1.5 23H0.5Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <div className="faster-node__model">
+                    <img src={FasterFive} alt="" />
+                    <p>
+                      Model image
+                      <br /> registry
+                    </p>
+                  </div>
+                  <div className="faster-node__s-line mob-bottom">
+                    <FasterMiniLine />
+                  </div>
+                  <div className="faster-node__s">
+                    <img src={FasterSix} alt="" />
+                    <p>S3</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="faster-node__line"></div>
-            <div className="faster-two__right-item">
-              <h6>Frankfurt edge node</h6>
-              <div className="faster-node__box">
-                <div className="faster-node__box-one">
-                  <div className="faster-basic">
-                    <img src={FasterOne} alt="" />
-                    <p>NVIDIAL40S GPU</p>
-                  </div>
-                  <FasterMiniLine />
-                  <div className="faster-basic">
-                    <img src={FasterTwo} alt="" />
-                    <p>Local storage</p>
-                  </div>
-                  <div className="faster-basic">
-                    <img src={FasterThree} alt="" />
-                    <p>K8s</p>
-                  </div>
-                  <FasterMiniLine />
-                  <div className="faster-basic">
-                    <img src={FasterFour} alt="" />
-                    <p>Pod with ML model</p>
-                  </div>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                >
-                  <path
-                    d="M4.30176 2.00023L8.10509 5.80357C8.55426 6.25273 8.55426 6.98773 8.10509 7.4369L4.30176 11.2402"
-                    stroke="#FFF2EA"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <div className="faster-node__model">
-                  <img src={FasterFive} alt="" />
-                  <p>
-                    Model image
-                    <br /> registry
-                  </p>
-                </div>
-                <div className="faster-node__s-line">
-                  <FasterMiniLine />
-                </div>
-                <div className="faster-node__s">
-                  <img src={FasterSix} alt="" />
-                  <p>S3</p>
-                </div>
-              </div>
-            </div>
           </div>
           <div className="faster-two__right-top" onClick={() => handleClick()}>
             <div>
