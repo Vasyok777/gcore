@@ -5,10 +5,7 @@ import {Route, Routes} from "react-router-dom"
 import FooterMain from "./components/Footer/FooterMain"
 // import {Footer} from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import {Blog} from "./pages/Blog/Blog"
-import {BlogContent} from "./pages/Blog/BlogContent/BlogContent"
 import {Home} from "./pages/Home/Home"
-import {TermsOfUse} from "./pages/TermsOfUse/TermsOfUse"
 import {MainContext} from "./providers/MainContext"
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
@@ -58,11 +55,8 @@ export default function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:_id" element={<BlogContent />} />
-            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            {/* <Route path="/blog" element={<Blog />} /> */}
           </Routes>
-          {/* <Footer /> */}
           <FooterMain />
         </div>
       </div>
