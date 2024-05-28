@@ -1,4 +1,3 @@
-import ImgOneContent from "../../../assets/images/faster/content-one.png"
 import ImgFiveSvg from "../../../assets/images/faster/five-svg.svg"
 import ImgFourSvg from "../../../assets/images/faster/four-svg.svg"
 import ImgOneSvg from "../../../assets/images/faster/one-svg.svg"
@@ -6,6 +5,7 @@ import ImgSevenSvg from "../../../assets/images/faster/seven-svg.svg"
 import ImgSixSvg from "../../../assets/images/faster/six-svg.svg"
 import ImgThreeSvg from "../../../assets/images/faster/three-svg.svg"
 import ImgTwoSvg from "../../../assets/images/faster/two-svg.svg"
+import FasterVideo from "../../../assets/video/faster.MP4"
 
 import "./OneContent.scss"
 
@@ -13,7 +13,15 @@ const OneContent = () => {
   return (
     <div className="faster-one">
       <div className="faster-one__left">
-        <img src={ImgOneContent} alt="" />
+        {/* <img src={ImgOneContent} alt="" /> */}
+        <video
+          className="faster-one__video"
+          src={FasterVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <p>Try Gcore Inference at the Edge: Speed up AI, reduce latency.</p>
       </div>
       <div className="faster-one__right">

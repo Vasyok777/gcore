@@ -1,12 +1,20 @@
 import PromoBgMobImg from "../../assets/images/promo/mob-bg.png"
-import PromoBgImg from "../../assets/images/promo/promo_bg.png"
 import StarImg from "../../assets/images/promo/star.svg"
+import VideoPromo from "../../assets/video/promo.mp4"
 
 import "./Promo.scss"
 
 const Promo = () => {
   return (
     <section className="promo">
+      <video
+        className="promo__bg-video"
+        src={VideoPromo}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
       <img className="promo__bg-mob" src={PromoBgMobImg} alt="" />
       <div className="container">
         <div className="promo__wrapper">
@@ -30,7 +38,6 @@ const Promo = () => {
           </div>
         </div>
       </div>
-      <img className="promo__bg" src={PromoBgImg} alt="" />
     </section>
   )
 }

@@ -1,11 +1,12 @@
-import ItemOneImg from "../../assets/images/potention/1.png"
-import ItemTwoImg from "../../assets/images/potention/2.png"
-import ItemThreeImg from "../../assets/images/potention/3.png"
-import ItemFourImg from "../../assets/images/potention/4.png"
-import ItemFiveImg from "../../assets/images/potention/5.png"
 import ItemSixImg from "../../assets/images/potention/6.png"
-import ItemSevenImg from "../../assets/images/potention/7.png"
 import StarImg from "../../assets/images/promo/star.svg"
+import OneVideo from "../../assets/video/potential_1.MP4"
+import TwoVideo from "../../assets/video/potential_2.MP4"
+import ThreeVideo from "../../assets/video/potential_3.MP4"
+import FourVideo from "../../assets/video/potential_4.MP4"
+import FiveVideo from "../../assets/video/potential_5.MP4"
+// import ThreeVideo from "../../assets/video/potential_6.MP4"
+import SevenVideo from "../../assets/video/potential_7.MP4"
 import NavbarCustom from "../NavbarCustom"
 
 import "./Potential.scss"
@@ -31,7 +32,14 @@ const Potential = () => {
           <div className="potential-box">
             <div className="potential-box__one">
               <div className="potential-box__item">
-                <img src={ItemOneImg} alt="" />
+                <video
+                  className=""
+                  src={OneVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content one">
                   <h6>Low-latency global network </h6>
                   <p>
@@ -42,7 +50,14 @@ const Potential = () => {
                 </div>
               </div>
               <div className="potential-box__item">
-                <img src={ItemTwoImg} alt="" />
+                <video
+                  className=""
+                  src={TwoVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content two">
                   <h6>Single end-point for all AI tasks</h6>
                   <p>
@@ -54,7 +69,14 @@ const Potential = () => {
             </div>
             <div className="potential-box__two">
               <div className="potential-box__item">
-                <img src={ItemThreeImg} alt="" />
+                <video
+                  className=""
+                  src={ThreeVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content">
                   <h6>Data privacy and security </h6>
                   <p>
@@ -64,7 +86,14 @@ const Potential = () => {
                 </div>
               </div>
               <div className="potential-box__item">
-                <img src={ItemFourImg} alt="" />
+                <video
+                  className=""
+                  src={FourVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content">
                   <h6>Unlimited object storage  </h6>
                   <p>
@@ -74,7 +103,15 @@ const Potential = () => {
                 </div>
               </div>
               <div className="potential-box__item">
-                <img src={ItemFiveImg} alt="" />
+                {/* <img src={ItemFiveImg} alt="" /> */}
+                <video
+                  className=""
+                  src={FiveVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content">
                   <h6>Pre-trained and custom ML models </h6>
                   <p>
@@ -87,6 +124,14 @@ const Potential = () => {
             <div className="potential-box__one">
               <div className="potential-box__item">
                 <img src={ItemSixImg} alt="" />
+                {/* <video
+                  className=""
+                  src={ThreeVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                /> */}
                 <div className="potential-box__item-content">
                   <h6>Model autoscaling </h6>
                   <p>
@@ -96,7 +141,14 @@ const Potential = () => {
                 </div>
               </div>
               <div className="potential-box__item">
-                <img src={ItemSevenImg} alt="" />
+                <video
+                  className=""
+                  src={SevenVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="potential-box__item-content">
                   <h6>NVIDIA L40S GPUs</h6>
                   <p>
