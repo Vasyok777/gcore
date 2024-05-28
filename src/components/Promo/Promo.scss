@@ -21,11 +21,12 @@
       left: 0;
       width: 100%;
       right: 0;
+      object-fit: contain;
       @media (max-width: 1400px) {
-        height: 775px;
+        // height: 775px;
       }
       @media (max-width: 1280px) {
-        object-fit: cover;
+        // object-fit: cover;
       }
       @media (max-width: 768px) {
         display: none;
