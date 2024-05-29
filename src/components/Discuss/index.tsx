@@ -11,8 +11,6 @@ const Discuss = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const wrapper = wrapperRef.current
-
       gsap.fromTo(
         ".discuss__wrapper",
         {
@@ -27,7 +25,6 @@ const Discuss = () => {
             start: "top center",
             end: "50% 40%",
             scrub: true,
-            markers: true,
           },
         },
       )

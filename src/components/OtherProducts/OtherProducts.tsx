@@ -1,3 +1,8 @@
+import {motion as m} from "framer-motion"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import {useLayoutEffect, useRef} from "react"
+
 import ImgOne from "../../assets/images/other_products/1.svg"
 import ImgTwo from "../../assets/images/other_products/2.svg"
 import ImgThree from "../../assets/images/other_products/3.svg"
@@ -8,14 +13,50 @@ import ImgEllips from "../../assets/images/other_products/ellips.svg"
 
 import "./OtherProducts.scss"
 
+gsap.registerPlugin(ScrollTrigger)
+
 const OtherProducts = () => {
+  const productsRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".other-products__item",
+        {
+          y: 200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: ".other-products__item.first-row",
+            scrub: true,
+            start: "top 95%",
+            end: "50% 20%",
+            markers: true,
+          },
+        },
+      )
+    }, productsRef)
+
+    return () => ctx.revert()
+  }, [])
   return (
     <section className="other-products">
       <div className="container">
         <div className="other-products__wrapper">
-          <h2 className="other-products__title">Try other Gcore products </h2>
-          <div className="other-products__inner">
-            <div className="other-products__item">
+          <m.h2
+            initial={{opacity: 0, y: 50}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{delay: 0.4, duration: 1, ease: "easeInOut"}}
+            className="other-products__title"
+          >
+            Try other Gcore products 
+          </m.h2>
+          <div className="other-products__inner" ref={productsRef}>
+            <div className="other-products__item first-row">
               <div className="other-products__item-img">
                 <img src={ImgOne} alt="" />
                 <img
@@ -48,7 +89,7 @@ const OtherProducts = () => {
               </a>
             </div>
             {/* 2 */}
-            <div className="other-products__item">
+            <div className="other-products__item first-row">
               <div className="other-products__item-img">
                 <img src={ImgTwo} alt="" />
                 <img
@@ -82,7 +123,7 @@ const OtherProducts = () => {
             </div>
             {/* end 2 */}
             {/* 3 */}
-            <div className="other-products__item">
+            <div className="other-products__item first-row">
               <div className="other-products__item-img">
                 <img src={ImgThree} alt="" />
                 <img

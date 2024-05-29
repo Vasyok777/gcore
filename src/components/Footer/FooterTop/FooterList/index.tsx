@@ -10,12 +10,10 @@ interface FooterListProps {
   items: {id: string; text: string; link: string}[]
 }
 
-const FooterList: FC<FooterListProps> = ({title, items, time = 0}) => {
+const FooterList: FC<FooterListProps> = ({title, items}) => {
   const listRf = useRef(null)
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const targets = `.${styles.item}`
-
       const animationTitle = gsap.from(".footer__list-menu-title", {
         y: 16,
         opacity: 0,
