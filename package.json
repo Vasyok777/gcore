@@ -11,6 +11,7 @@
     "host": "vite --host"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.42",
     "@gsap/react": "^2.1.0",
     "@lottiefiles/lottie-player": "^2.0.2",
     "@lottiefiles/react-lottie-player": "^3.5.3",

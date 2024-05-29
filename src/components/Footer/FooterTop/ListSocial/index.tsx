@@ -1,9 +1,38 @@
+import {motion as m} from "framer-motion"
+import gsap from "gsap"
+import {useLayoutEffect, useRef} from "react"
+
 import styles from "./ListSocial.module.scss"
 
 const ListSocial = () => {
+  const listRef = useRef(null)
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const targets = ".footer-list__social-item"
+
+      const animation = gsap.from(targets, {
+        y: 35,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.15,
+        paused: true,
+      })
+
+      ScrollTrigger.create({
+        trigger: listRef.current,
+        onEnter: () => animation.restart(),
+        onLeave: () => animation.pause().progress(0),
+        onEnterBack: () => animation.restart(),
+        onLeaveBack: () => animation.pause().progress(0),
+      })
+    }, listRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <ul className={styles.root}>
-      <li>
+    <ul className={styles.root} ref={listRef}>
+      <m.li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +72,8 @@ const ListSocial = () => {
             </defs>
           </svg>
         </a>
-      </li>
-      <li>
+      </m.li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +102,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +131,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +167,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +198,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +227,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +261,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -263,7 +292,7 @@ const ListSocial = () => {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="footer-list__social-item">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"

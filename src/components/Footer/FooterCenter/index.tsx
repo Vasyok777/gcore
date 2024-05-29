@@ -1,3 +1,5 @@
+import {motion as m} from "framer-motion"
+
 import EcoImg from "../../../assets/images/footer/eco.png"
 import MadeImg from "../../../assets/images/footer/made.png"
 import WorldImg from "../../../assets/images/footer/world.png"
@@ -9,20 +11,45 @@ const FooterCenter = () => {
     <div className="footer-center">
       <div className="footer-center__line"></div>
       <div className="footer-center__partners">
-        <div className="footer-center__partner">
+        <m.div
+          initial={{opacity: 0, scale: 0}}
+          whileInView={{opacity: 1, scale: 1}}
+          transition={{duration: 0.8, ease: "easeInOut"}}
+          className="footer-center__partner"
+        >
           <img src={MadeImg} alt="" />
-        </div>
-        <div className="footer-center__partner">
+        </m.div>
+        <m.div
+          initial={{opacity: 0, scale: 0}}
+          whileInView={{opacity: 1, scale: 1}}
+          transition={{duration: 0.8, delay: 0.1, ease: "easeInOut"}}
+          className="footer-center__partner"
+        >
           <img src={EcoImg} alt="" />
-        </div>
-        <div className="footer-center__partner">
+        </m.div>
+        <m.div
+          initial={{opacity: 0, scale: 0}}
+          whileInView={{opacity: 1, scale: 1}}
+          transition={{duration: 0.8, delay: 0.2, ease: "easeInOut"}}
+          className="footer-center__partner"
+        >
           <img src={WorldImg} alt="" />
-        </div>
+        </m.div>
       </div>
-      <p className="footer-center__text">
+      <m.p
+        initial={{opacity: 0, y: 20}}
+        whileInView={{opacity: 1, y: 0}}
+        transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+        className="footer-center__text"
+      >
         Subscribe to discover the latest updates, news, and features
-      </p>
-      <form className="footer-center__form">
+      </m.p>
+      <m.form
+        initial={{opacity: 0, y: 30}}
+        whileInView={{opacity: 1, y: 0}}
+        transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+        className="footer-center__form"
+      >
         <input type="email" placeholder="Enter your E-mail" />
         <button>
           <svg
@@ -42,7 +69,7 @@ const FooterCenter = () => {
             />
           </svg>
         </button>
-      </form>
+      </m.form>
       <div className="footer-center__line-mob"></div>
     </div>
   )

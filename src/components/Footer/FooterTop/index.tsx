@@ -1,3 +1,7 @@
+import {motion as m} from "framer-motion"
+import gsap from "gsap"
+import {useLayoutEffect, useRef} from "react"
+
 import AppLogo from "../../ul/AppLogo/AppLogo"
 
 import FooterList from "./FooterList"
@@ -121,39 +125,85 @@ const FooterTop = () => {
       link: "#",
     },
   ]
+  const listRf = useRef(null)
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const animationTitle = gsap.from(".footer-top__right-contact-title", {
+        y: 16,
+        opacity: 0,
+        duration: 0.6,
+        delay: 1,
+        paused: true,
+      })
+      const animation = gsap.from(".footer-top__right-contact-item", {
+        y: 35,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.15,
+        paused: true,
+      })
+
+      ScrollTrigger.create({
+        trigger: listRf.current,
+        onEnter: () => animation.restart(),
+        onLeave: () => animation.pause().progress(0),
+        onEnterBack: () => animation.restart(),
+        onLeaveBack: () => animation.pause().progress(0),
+      })
+      ScrollTrigger.create({
+        trigger: listRf.current,
+        onEnter: () => animationTitle.restart(),
+        onLeave: () => animationTitle.pause().progress(0),
+        onEnterBack: () => animationTitle.restart(),
+        onLeaveBack: () => animationTitle.pause().progress(0),
+      })
+    }, listRf)
+
+    return () => ctx.revert()
+  }, [])
   return (
     <div className="footer-top">
       <div className="footer-top__left">
         <div className="footer-top__logo">
           <AppLogo />
-          <p className="footer-top__left-text">
+          <m.p
+            initial={{opacity: 0, y: 10}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+            className="footer-top__left-text"
+          >
             Powerful solutions to help your business grow globally. Experience
             our superior performance, proven by the largest online businesses.
-          </p>
+          </m.p>
           <ListSocial />
         </div>
         <div className="footer-top__left-line"></div>
       </div>
-      <div className="footer-top__right">
+      <div className="footer-top__right" ref={listRf}>
         <FooterList title="Products" items={productsLink} />
-        <FooterList title="Company" items={companyLink} />
-        <FooterList title="Resources" items={resourcesLink} />
+        <FooterList title="Company" items={companyLink} time={0.5} />
+        <FooterList title="Resources" items={resourcesLink} time={0.6} />
         <div className="footer-top__right-contact">
-          <h6>Contact</h6>
+          <h6 className="footer-top__right-contact-title">Contact</h6>
           <ul className="footer-top__right-list">
-            <li>
+            <li className="footer-top__right-contact-item">
               <a href="tel:35220880507">+ 352 208 80 507</a>
             </li>
-            <li>
+            <li className="footer-top__right-contact-item">
               <a href="mailto:sales@gcorelabs.com">sales@gcorelabs.com</a>
             </li>
           </ul>
-          <h6 style={{marginBottom: "13px"}}>Contact</h6>
+          <h6
+            style={{marginBottom: "13px"}}
+            className="footer-top__right-contact-title"
+          >
+            Contact
+          </h6>
           <ul>
-            <li>
+            <li className="footer-top__right-contact-item">
               <a href="mailto:support@gcorelabs.com">support@gcorelabs.com</a>
             </li>
-            <li>
+            <li className="footer-top__right-contact-item">
               <a href="mailto:info@gcorelabs.com">info@gcorelabs.com</a>
             </li>
           </ul>
