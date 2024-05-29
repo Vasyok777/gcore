@@ -19,14 +19,14 @@ const FooterList: FC<FooterListProps> = ({title, items, time = 0}) => {
       const animationTitle = gsap.from(".footer__list-menu-title", {
         y: 16,
         opacity: 0,
-        duration: 0.5 + time,
+        duration: 0.5,
         delay: 2,
         paused: true,
       })
       const animation = gsap.from(".footer__list-menu-item", {
-        y: 35,
+        y: 28,
         opacity: 0,
-        duration: 0.4,
+        duration: 0.3,
         stagger: 0.15,
         paused: true,
       })

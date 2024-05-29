@@ -139,7 +139,7 @@ const FooterTop = () => {
         y: 35,
         opacity: 0,
         duration: 0.4,
-        stagger: 0.15,
+        stagger: 0.2,
         paused: true,
       })
 

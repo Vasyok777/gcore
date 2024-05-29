@@ -14,7 +14,7 @@ const ListSocial = () => {
         y: 35,
         opacity: 0,
         duration: 0.5,
-        stagger: 0.15,
+        stagger: 0.1,
         paused: true,
       })
 
