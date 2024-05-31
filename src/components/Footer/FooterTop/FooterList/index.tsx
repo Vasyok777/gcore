@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {FC, useLayoutEffect, useRef} from "react"
 
 import styles from "./FooterList.module.scss"

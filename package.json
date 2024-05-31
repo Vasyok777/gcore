@@ -22,12 +22,14 @@
     "mouse-follower": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.5",
     "react-mouse-follower": "^2.0.3",
     "react-router-dom": "^6.22.0",
     "react-slick": "^0.29.0",
     "sass": "^1.77.0",
     "slick-carousel": "^1.8.1",
-    "slick-slider": "^1.8.2"
+    "slick-slider": "^1.8.2",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

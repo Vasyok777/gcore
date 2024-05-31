@@ -96,11 +96,12 @@
     box-shadow: 0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
     backdrop-filter: blur(204.8000030517578px);
     position: relative;
+    transition: all 0.3s ease;
     @media (max-width: 768px) {
       padding: 20px;
       border-radius: 24px;
     }
-    &.center {
+    &:hover {
       border-radius: 32px;
       border: 1px solid #252525;
       background: #0c0c0c;
@@ -108,6 +109,10 @@
         0px 0px 13px 15px rgba(255, 76, 0, 0.06),
         0px 4px 51.9px 5px rgba(75, 75, 75, 0.07) inset;
       backdrop-filter: blur(204.8000030517578px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    &.center {
       & .price-item__order {
         border-radius: 28.219px;
         border: 0.656px solid rgba(191, 191, 191, 0.1);
@@ -119,6 +124,17 @@
         font-weight: 600;
         line-height: 120%;
         letter-spacing: -0.25px;
+        transition: all 0.3s ease;
+        &:hover {
+          background: #161616;
+          backdrop-filter: blur(19.6875px);
+          display: inline-flex;
+          padding: 17px 20px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          color: #fff2ea;
+        }
       }
     }
     &__decor {
@@ -200,6 +216,20 @@
       line-height: 120%;
       letter-spacing: -0.25px;
       width: 100%;
+      transition: all 0.3s ease;
+      &:hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background: #ff4c00;
+        backdrop-filter: blur(19.6875px);
+        color: #fff2ea;
+      }
     }
   }
+}
+.price__title-wrapper {
+  will-change: transform, opacity;
+}
+.price__title {
+  will-change: transform, opacity;
 }

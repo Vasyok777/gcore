@@ -1,5 +1,6 @@
 import {motion as m} from "framer-motion"
 import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect, useRef} from "react"
 
 import styles from "./ListSocial.module.scss"

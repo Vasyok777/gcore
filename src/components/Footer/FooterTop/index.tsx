@@ -1,5 +1,6 @@
 import {motion as m} from "framer-motion"
 import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect, useRef} from "react"
 
 import AppLogo from "../../ul/AppLogo/AppLogo"
@@ -125,7 +126,9 @@ const FooterTop = () => {
       link: "#",
     },
   ]
+
   const listRf = useRef(null)
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const animationTitle = gsap.from(".footer-top__right-contact-title", {

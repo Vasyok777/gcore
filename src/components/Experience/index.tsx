@@ -1,3 +1,7 @@
+import gsap from "gsap"
+import {useLayoutEffect} from "react"
+import SplitType from "split-type"
+
 import AiImgOne from "../../assets/images/experience/ai-1.svg"
 import AiImgTwo from "../../assets/images/experience/ai-2.svg"
 import AiImgThree from "../../assets/images/experience/ai-3.svg"
@@ -17,6 +21,27 @@ import NavbarCustom from "../NavbarCustom"
 import "./Experience.scss"
 
 const Experience = () => {
+  useLayoutEffect(() => {
+    const ourText = new SplitType(".experience__title", {types: "words"})
+    const chars = ourText.words
+    gsap.fromTo(
+      chars,
+      {
+        y: 50,
+        opacity: 0,
+        scale: 1.2,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        // duration: 2,
+        // delay: 1,
+        scale: 1,
+        // ease: "linear",
+      },
+    )
+  }, [])
   return (
     <section className="experience">
       <div className="experience__inner">

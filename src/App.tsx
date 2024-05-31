@@ -1,23 +1,20 @@
-import {gsap} from "gsap"
 import {Route, Routes} from "react-router-dom"
 
 // import {Footer} from "./components/Footer/Footer"
 import FooterMain from "./components/Footer/FooterMain"
 import Header from "./components/Header/Header"
+import Contact from "./pages/Contact/Contact"
 import {Home} from "./pages/Home/Home"
-
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
 export default function App() {
   return (
     <>
-      <div id="smooth-content">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <FooterMain />
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <FooterMain />
     </>
   )
 }

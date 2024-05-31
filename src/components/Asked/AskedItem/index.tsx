@@ -4,10 +4,10 @@ import "./AskedItem.scss"
 
 const AskedItem = (props: any) => {
   const contentEl = useRef<null | any>(null)
-  const {handleToggle, active, faq} = props
+  const {handleToggle, active, faq, className} = props
   const {question, id, answer} = faq
   return (
-    <div className={`asked-item ${active === id ? "active" : ""}`}>
+    <div className={`asked-item ${className} ${active === id ? "active" : ""}`}>
       <div className="asked-item__header">
         <div
           className={`asked-item__box ${active === id ? "active" : ""}`}

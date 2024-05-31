@@ -1,3 +1,7 @@
+import gsap from "gsap"
+import {useLayoutEffect} from "react"
+import SplitType from "split-type"
+
 import OneImg from "../../assets/images/flexible/1.png"
 import TwoImg from "../../assets/images/flexible/2.png"
 import ThreeImg from "../../assets/images/flexible/3.png"
@@ -8,6 +12,29 @@ import SixImg from "../../assets/images/flexible/6.png"
 import "./Flexible.scss"
 
 const Flexible = () => {
+  useLayoutEffect(() => {
+    const ourText = new SplitType(".flexible__title", {types: "words"})
+    const chars = ourText.words
+    const tl = gsap.timeline()
+    tl.fromTo(".flexible-title__wrapper", {scale: 1.1}, {scale: 1, duration: 1})
+    gsap.fromTo(
+      chars,
+      {
+        y: 20,
+        opacity: 0,
+        // scale: 1.1,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        // duration: 2,
+        // delay: 1,
+        scale: 1,
+        ease: "linear",
+      },
+    )
+  }, [])
   return (
     <section className="flexible">
       <div className="container">
@@ -55,9 +82,11 @@ const Flexible = () => {
             </svg>
             Model serving, your way
           </div>
-          <h2 className="flexible__title">
-            A flexible solution <br /> for diverse use cases
-          </h2>
+          <div className="flexible-title__wrapper">
+            <h2 className="flexible__title">
+              A flexible solution <br /> for diverse use cases
+            </h2>
+          </div>
           <div className="flexible__inner">
             <div className="flexible__item">
               <div className="flexible__item-img">

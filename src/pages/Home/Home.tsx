@@ -12,12 +12,12 @@ import Promo from "../../components/Promo"
 export const Home = () => {
   return (
     <main>
-      <Promo />
-      <Faster />
-      <Potential />
-      <GlobalNetwork />
+      {/* <Promo /> */}
+      {/* <Faster /> */}
+      {/* <Potential /> */}
+      {/* <GlobalNetwork /> */}
       <div className="white-section">
-        <Experience />
+        {/* <Experience /> */}
         <Flexible />
       </div>
       <Price />
