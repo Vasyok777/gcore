@@ -1,7 +1,8 @@
+import clsx from "clsx"
 import {motion as m} from "framer-motion"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
-import {useLayoutEffect} from "react"
+import {useLayoutEffect, useState} from "react"
 import SplitType from "split-type"
 
 import OneImg from "../../assets/images/price/1.svg"
@@ -15,6 +16,7 @@ import NavbarCustom from "../NavbarCustom"
 import "./Price.scss"
 
 const Price = () => {
+  const [activeToggle, setActiveToggle] = useState(true)
   gsap.registerPlugin(ScrollTrigger)
   useLayoutEffect(() => {
     const ourText = new SplitType(".price__title", {types: "words"})
@@ -38,6 +40,9 @@ const Price = () => {
       },
     )
   }, [])
+  const handleToggle = () => {
+    setActiveToggle((prev) => !prev)
+  }
   return (
     <section className="price">
       <div className="container">
@@ -46,8 +51,18 @@ const Price = () => {
             <NavbarCustom />
           </div>
           <div className="price-tabs">
-            <button className="active">€</button>
-            <button>$</button>
+            <button
+              className={clsx(activeToggle ? "active" : "")}
+              onClick={handleToggle}
+            >
+              €
+            </button>
+            <button
+              className={clsx(activeToggle ? "" : "active")}
+              onClick={handleToggle}
+            >
+              $
+            </button>
           </div>
           <m.div
             initial={{scale: 1.3}}
@@ -63,7 +78,7 @@ const Price = () => {
             <div className="price-item">
               <div className="price-item__undertext">1x NVIDIA L40S GPU</div>
               <div className="price-item__price">
-                €2.40 <span>/month</span>
+                {activeToggle ? "€2.40" : "$2.80"} <span>/month</span>
               </div>
               <ul className="price-item__list">
                 <li className="price-item__list-item">
@@ -92,7 +107,7 @@ const Price = () => {
               <img src={DecorImg} className="price-item__decor" alt="" />
               <div className="price-item__undertext">2x NVIDIA L40S GPU </div>
               <div className="price-item__price">
-                €9.30 <span>/month</span>
+                {activeToggle ? "€9.30" : "$10.40"} <span>/month</span>
               </div>
               <ul className="price-item__list">
                 <li className="price-item__list-item">
@@ -120,7 +135,7 @@ const Price = () => {
             <div className="price-item">
               <div className="price-item__undertext">2x NVIDIA L40S GPU  </div>
               <div className="price-item__price">
-                €4.70 <span>/month</span>
+                {activeToggle ? "€4.70" : "$5.40"} <span>/month</span>
               </div>
               <ul className="price-item__list">
                 <li className="price-item__list-item">

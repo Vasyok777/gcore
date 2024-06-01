@@ -61,30 +61,78 @@ const Experience = () => {
               Try Gcore Inference at the Edge for yourself using our playground.
             </p>
             <div className="experience__box-ia">
-              <a href="#" className="experience__box-link">
-                <img src={AiImgOne} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgTwo} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgThree} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgFour} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgFive} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgSix} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgSeven} alt="" />
-              </a>
-              <a href="#" className="experience__box-link">
-                <img src={AiImgEight} alt="" />
-              </a>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgOne} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgTwo} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgThree} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgFour} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgFive} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgSix} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgSeven} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
+              <div className="experience__box-item">
+                <a href="#" className="experience__box-link">
+                  <img src={AiImgEight} alt="" />
+                </a>
+                <div className="experience__box-item-content">
+                  <h6>Image classification</h6>
+                  <p>@cf/meta/llama-3-8b-instruct</p>
+                </div>
+              </div>
             </div>
             <div className="experience-content">
               <div className="experience-content__wrapper">

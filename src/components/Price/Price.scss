@@ -112,31 +112,7 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
-    &.center {
-      & .price-item__order {
-        border-radius: 28.219px;
-        border: 0.656px solid rgba(191, 191, 191, 0.1);
-        background: #ff4c00;
-        backdrop-filter: blur(19.6875px);
-        color: #fff2ea;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 120%;
-        letter-spacing: -0.25px;
-        transition: all 0.3s ease;
-        &:hover {
-          background: #161616;
-          backdrop-filter: blur(19.6875px);
-          display: inline-flex;
-          padding: 17px 20px;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          color: #fff2ea;
-        }
-      }
-    }
+
     &__decor {
       position: absolute;
       left: 0;
