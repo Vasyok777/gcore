@@ -34,7 +34,6 @@ const Price = () => {
         ease: "linear",
         scrollTrigger: {
           trigger: ".price__title-wrapper",
-          markers: true,
           toggleActions: "restart none restart none",
         },
       },

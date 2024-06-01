@@ -92,7 +92,6 @@ const Asked = () => {
         ease: "linear",
         scrollTrigger: {
           trigger: ".asked__title-wrapper",
-          markers: true,
           toggleActions: "restart none restart none",
         },
       },

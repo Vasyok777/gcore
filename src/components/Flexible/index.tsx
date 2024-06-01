@@ -1,4 +1,5 @@
 import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect} from "react"
 import SplitType from "split-type"
 
@@ -10,6 +11,8 @@ import FiveImg from "../../assets/images/flexible/5.png"
 import SixImg from "../../assets/images/flexible/6.png"
 
 import "./Flexible.scss"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Flexible = () => {
   useLayoutEffect(() => {
@@ -34,6 +37,16 @@ const Flexible = () => {
         ease: "linear",
       },
     )
+    // ScrollTrigger.create({
+    //   trigger: ".flexible__inner",
+    //   start: "top top",
+    //   end: "+=1000px",
+    //   invalidateOnRefresh: true,
+    //   pin: true,
+    //   pinSpacing: false,
+    //   anticipatePin: 1,
+    //   toggleActions: "play none reverse none",
+    // })
   }, [])
   return (
     <section className="flexible">

@@ -102,8 +102,8 @@
       rgba(255, 255, 255, 0.45) 100%
     );
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent !important;
     text-align: center;
     font-size: 68px;
     font-weight: 600;
@@ -127,10 +127,11 @@
       rgba(255, 255, 255, 0.22) 100%
     );
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     max-width: 566px;
     margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.48);
     @media (max-width: 768px) {
       font-size: 14px;
       margin-bottom: 36px;
@@ -158,5 +159,12 @@
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.25px;
+  }
+}
+.promo__text-span {
+  display: inline-block;
+  margin-right: 8px;
+  @media (max-width: 1280px) {
+    margin-right: 4px;
   }
 }

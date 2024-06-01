@@ -35,7 +35,6 @@ const OtherProducts = () => {
             scrub: true,
             start: "top 95%",
             end: "50% 20%",
-            // markers: true,
           },
         },
       )

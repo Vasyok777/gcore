@@ -40,7 +40,9 @@
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
 }
-
+body {
+  overflow-x: hidden;
+}
 .lottie svg {
   position: absolute;
   top: 0;
@@ -102,6 +104,22 @@
   justify-content: center;
   align-items: center;
 }
-.white-section {
+
+.faster-panel {
   background: #fff;
+  position: relative;
+  z-index: 2;
+}
+.flexible-section {
+  position: relative;
+  z-index: 4;
+}
+.three-panel {
+  position: relative;
+  z-index: 3;
+}
+.four-section {
+  z-index: 5;
+  background: #060607;
+  position: relative;
 }

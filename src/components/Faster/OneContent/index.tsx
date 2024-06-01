@@ -1,3 +1,8 @@
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+import {useLayoutEffect, useRef} from "react"
+import SplitType from "split-type"
+
 import ImgFiveSvg from "../../../assets/images/faster/five-svg.svg"
 import ImgFourSvg from "../../../assets/images/faster/four-svg.svg"
 import ImgOneSvg from "../../../assets/images/faster/one-svg.svg"
@@ -10,8 +15,85 @@ import FasterVideo from "../../../assets/video/faster.MP4"
 import "./OneContent.scss"
 
 const OneContent = () => {
+  const fasterOneRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const linesText = new SplitType(".faster-one__right-title", {
+        types: "lines",
+      })
+      const linesTextVideo = new SplitType(".faster-one__video-text", {
+        types: "lines",
+      })
+      const chart = new SplitType(".faster-one__right-text", {
+        types: "lines",
+      })
+      const charsLines = linesText.lines
+      const charsLinesVideo = linesTextVideo.lines
+      const chars = chart.lines
+      gsap.fromTo(
+        charsLines,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+      gsap.fromTo(
+        charsLinesVideo,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1.5,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+      gsap.fromTo(
+        chars,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1.5,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+    }, fasterOneRef)
+
+    return () => ctx.revert()
+  }, [])
   return (
-    <div className="faster-one">
+    <div className="faster-one" ref={fasterOneRef}>
       <div className="faster-one__left">
         {/* <img src={ImgOneContent} alt="" /> */}
         <video
@@ -22,15 +104,17 @@ const OneContent = () => {
           loop
           playsInline
         />
-        <p>Try Gcore Inference at the Edge: Speed up AI, reduce latency.</p>
+        <p className="faster-one__video-text">
+          Try Gcore Inference at the Edge: Speed up AI, reduce latency.
+        </p>
       </div>
       <div className="faster-one__right">
         <div className="faster-one__right-top">
-          <h6>
+          <h6 className="faster-one__right-title">
             Gcore Inference at the Edge reduces the latency of your ML model
             output and improves the performance of AI-enabled applications.{" "}
           </h6>
-          <p>
+          <p className="faster-one__right-text">
             It’s particularly useful for AI apps that need immediate processing
             and minimal delay, like generative AI and real-time object
             detection. 
