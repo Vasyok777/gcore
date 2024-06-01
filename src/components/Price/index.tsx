@@ -19,7 +19,6 @@ const Price = () => {
   useLayoutEffect(() => {
     const ourText = new SplitType(".price__title", {types: "words"})
     const chars = ourText.words
-    const tl = gsap.timeline()
     gsap.fromTo(
       chars,
       {

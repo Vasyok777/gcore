@@ -77,7 +77,6 @@ const Asked = () => {
   useLayoutEffect(() => {
     const ourText = new SplitType(".asked__title", {types: "words"})
     const chars = ourText.words
-    const tl = gsap.timeline()
     gsap.fromTo(
       chars,
       {
