@@ -1,43 +1,48 @@
-import cn from "clsx";
-import { useState, forwardRef } from "react";
-import styles from "./Select.module.scss";
+import cn from "clsx"
+import {forwardRef, useState} from "react"
+
+import styles from "./Select.module.scss"
 
 export interface ISelectOption {
-  value: string;
-  label: string;
+  value: string
+  label?: string
 }
 
 export interface ISelectProps {
-  options: ISelectOption[];
-  placeholder?: string;
-  error?: string;
-  onChange?: (value: string) => void;
-  className?: string;
-  style?: React.CSSProperties;
+  options: ISelectOption[]
+  placeholder?: string
+  error?: string | undefined | any
+  onChange?: (value: string | undefined) => void
+  className?: string
+  style?: React.CSSProperties
 }
 
 const Select: React.ForwardRefRenderFunction<HTMLDivElement, ISelectProps> = (
-  { options, placeholder, error, onChange, className, style },
-  ref
+  {options, placeholder, error, onChange, className, style},
+  ref,
 ) => {
   const [selectedValue, setSelectedValue] = useState<string | undefined>(
-    placeholder ? "" : undefined
-  );
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+    placeholder ? "" : undefined,
+  )
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  const handleSelect = (value: string, label: string) => {
-    setSelectedValue(value);
-    onChange && onChange(value);
-    setIsOpen(false);
-  };
+  const handleSelect = (
+    value: string | undefined,
+    label: string | undefined,
+  ) => {
+    setSelectedValue(value)
+    onChange && onChange(value)
+    setIsOpen(false)
+    console.log(label)
+  }
 
   return (
     <div className={cn(styles.root, className)} style={style} ref={ref}>
-      <div className={cn(styles.select, { [styles.select__error]: !!error })}>
+      <div className={cn(styles.select, {[styles.select__error]: !!error})}>
         <div className={styles.selected} onClick={() => setIsOpen(!isOpen)}>
           {selectedValue || placeholder}
           <svg
-            className={cn(styles.arrow, { [styles.arrow__open]: isOpen })}
+            className={cn(styles.arrow, {[styles.arrow__open]: isOpen})}
             width="14"
             height="8"
             viewBox="0 0 14 8"
@@ -53,11 +58,11 @@ const Select: React.ForwardRefRenderFunction<HTMLDivElement, ISelectProps> = (
         </div>
         {isOpen && (
           <div className={styles.options}>
-            {options.map(option => (
+            {options.map((option) => (
               <div
                 key={option.value}
                 className={styles.option}
-                onClick={() => handleSelect(option.value, option.label)}
+                onClick={() => handleSelect(option.value, option?.label)}
               >
                 {option.label}
               </div>
@@ -84,7 +89,7 @@ const Select: React.ForwardRefRenderFunction<HTMLDivElement, ISelectProps> = (
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default forwardRef<HTMLDivElement, ISelectProps>(Select);
+export default forwardRef<HTMLDivElement, ISelectProps>(Select)

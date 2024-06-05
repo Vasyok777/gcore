@@ -1,8 +1,8 @@
+import {motion} from "framer-motion"
 import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect, useRef} from "react"
 import SplitType from "split-type"
-import {motion as motion} from "framer-motion"
 
 import ImgFiveSvg from "../../../assets/images/faster/five-svg.svg"
 import ImgFourSvg from "../../../assets/images/faster/four-svg.svg"
@@ -94,44 +94,44 @@ const OneContent = () => {
     return () => ctx.revert()
   }, [])
   const itemVariants = {
-    hidden: { x: 100, opacity: 0 },
-    visible: (i) => ({
+    hidden: {x: 100, opacity: 0},
+    visible: (i: any) => ({
       x: 0,
       opacity: 1,
       transition: {
-        delay: i * 0.3 + 1.3, 
+        delay: i * 0.3 + 1.3,
         duration: 0.5,
         ease: "easeInOut",
       },
     }),
-  };
+  }
   const itemsOne = [
-    { imgSrc: ImgOneSvg, text: "Text generation" },
-    { imgSrc: ImgTwoSvg, text: "Image generation" },
-    { imgSrc: ImgThreeSvg, text: "Image classification" },
-    { imgSrc: ImgFourSvg, text: "Speech recognition" },
-    { imgSrc: ImgFiveSvg, text: "Text generation" },
-  ];
-  
+    {imgSrc: ImgOneSvg, text: "Text generation"},
+    {imgSrc: ImgTwoSvg, text: "Image generation"},
+    {imgSrc: ImgThreeSvg, text: "Image classification"},
+    {imgSrc: ImgFourSvg, text: "Speech recognition"},
+    {imgSrc: ImgFiveSvg, text: "Text generation"},
+  ]
+
   const itemsTwo = [
-    { imgSrc: ImgFourSvg, text: "Speech recognition" },
-    { imgSrc: ImgFiveSvg, text: "Text generation" },
-    { imgSrc: ImgSixSvg, text: "Speech recognition" },
-    { imgSrc: ImgOneSvg, text: "Text generation" },
-    { imgSrc: ImgTwoSvg, text: "Image generation" },
-    { imgSrc: ImgThreeSvg, text: "Image classification" },
-  ];
-  
+    {imgSrc: ImgFourSvg, text: "Speech recognition"},
+    {imgSrc: ImgFiveSvg, text: "Text generation"},
+    {imgSrc: ImgSixSvg, text: "Speech recognition"},
+    {imgSrc: ImgOneSvg, text: "Text generation"},
+    {imgSrc: ImgTwoSvg, text: "Image generation"},
+    {imgSrc: ImgThreeSvg, text: "Image classification"},
+  ]
+
   const itemsThree = [
-    { imgSrc: ImgTwoSvg, text: "Image generation" },
-    { imgSrc: ImgThreeSvg, text: "Image classification" },
-    { imgSrc: ImgFourSvg, text: "Speech recognition" },
-    { imgSrc: ImgSixSvg, text: "Speech recognition" },
-    { imgSrc: ImgSevenSvg, text: "Text generation" },
-    { imgSrc: ImgOneSvg, text: "Text generation" },
-    { imgSrc: ImgFiveSvg, text: "Text generation" },
-  ];
-  
+    {imgSrc: ImgTwoSvg, text: "Image generation"},
+    {imgSrc: ImgThreeSvg, text: "Image classification"},
+    {imgSrc: ImgFourSvg, text: "Speech recognition"},
+    {imgSrc: ImgSixSvg, text: "Speech recognition"},
+    {imgSrc: ImgSevenSvg, text: "Text generation"},
+    {imgSrc: ImgOneSvg, text: "Text generation"},
+    {imgSrc: ImgFiveSvg, text: "Text generation"},
+  ]
+
   return (
     <div className="faster-one" ref={fasterOneRef}>
       <div className="faster-one__left">
@@ -216,7 +216,6 @@ const OneContent = () => {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   )

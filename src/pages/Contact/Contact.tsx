@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import {SubmitHandler, useForm} from "react-hook-form"
+import {Controller, SubmitHandler, useForm} from "react-hook-form"
 
 import Field from "../../components/ul/Field"
 import Select from "../../components/ul/Select"
@@ -30,15 +30,15 @@ const Contact = () => {
     reset()
   }
   const countryOptions = [
-    { value: "United States", label: "United States" },
-    { value: "Canada", label: "Canada" },
-    { value: "France", label: "France" },
-  ];
+    {value: "United States", label: "United States"},
+    {value: "Canada", label: "Canada"},
+    {value: "France", label: "France"},
+  ]
   const productOptions = [
-    { value: "1x NVIDIA L40S GPU", label: "1x NVIDIA L40S GPU" },
-    { value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU" },
-    { value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU" },
-  ];
+    {value: "1x NVIDIA L40S GPU", label: "1x NVIDIA L40S GPU"},
+    {value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU"},
+    {value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU"},
+  ]
   return (
     <main className={styles.contact}>
       <div className={clsx(styles.container, "container")}>
@@ -119,21 +119,31 @@ const Contact = () => {
                 {...formRegister("phone")}
               />
               <div className={styles["form__flex__selects"]}>
-                <Select
-                  placeholder="Country*"
-                  error={errors.country?.message}
-                  options={countryOptions}
-                  {...formRegister("country", {
-                    required: "Please complete this required field.",
-                  })}
+                <Controller
+                  name="country"
+                  // control={control}
+                  rules={{required: "Please complete this required field."}}
+                  render={({field}) => (
+                    <Select
+                      placeholder="Country*"
+                      error={errors.country?.message}
+                      options={countryOptions}
+                      onChange={field.onChange} // Adapt onChange
+                    />
+                  )}
                 />
-                <Select
-                  placeholder="Product*"
-                  error={errors.product?.message}
-                  options={productOptions}
-                  {...formRegister("product", {
-                    required: "Please complete this required field.",
-                  })}
+                <Controller
+                  name="product"
+                  // control={control}
+                  rules={{required: "Please complete this required field."}}
+                  render={({field}) => (
+                    <Select
+                      placeholder="Product*"
+                      error={errors.product?.message}
+                      options={productOptions}
+                      {...field}
+                    />
+                  )}
                 />
               </div>
               <textarea
@@ -146,7 +156,7 @@ const Contact = () => {
                 I'd like to receive Gcore updates on product news, blog
                 articles, and other related information.
               </label>
-              <button className={styles.form__button} >Submit</button>
+              <button className={styles.form__button}>Submit</button>
             </form>
           </div>
         </div>
@@ -155,5 +165,3 @@ const Contact = () => {
   )
 }
 export default Contact
-
-

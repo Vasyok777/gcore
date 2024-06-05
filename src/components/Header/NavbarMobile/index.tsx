@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import {useState} from "react"
+
 import LeftImg from "../../../assets/images/header/drop.jpg"
 import GPUImg from "../../../assets/images/header/gpu.svg"
 import IPUImg from "../../../assets/images/header/ipu.svg"
@@ -6,19 +7,22 @@ import IPUImg from "../../../assets/images/header/ipu.svg"
 import "./NavbarMobile.scss"
 
 const NavbarMobile = () => {
-  const [isOpenSub, setIsOpenSub] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenSub, setIsOpenSub] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleDropdownLvl1 = () => {
-    setIsOpenSub(!isOpenSub);
-  };
+    setIsOpenSub(!isOpenSub)
+  }
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
   return (
     <nav className="navbarMobile">
       <ul className="navbarMobile__list">
-        <li className="navbar__item navbarMobile__item" onClick={toggleDropdown}>
+        <li
+          className="navbar__item navbarMobile__item"
+          onClick={toggleDropdown}
+        >
           Products
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,10 @@ const NavbarMobile = () => {
             <div className="navbar-dropdown__left">
               <ul className="navbar-dropdown__links">
                 <li className=" active">
-                  <div className="navbar-dropdown__item" onClick={toggleDropdownLvl1}>                  
+                  <div
+                    className="navbar-dropdown__item"
+                    onClick={toggleDropdownLvl1}
+                  >
                     Edge AI{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +66,9 @@ const NavbarMobile = () => {
                       />
                     </svg>
                   </div>
-                  <div className={`navbar-dropdown__content ${isOpenSub ? "active" : ""}`}>
+                  <div
+                    className={`navbar-dropdown__content ${isOpenSub ? "active" : ""}`}
+                  >
                     <div className="navbar-dropdown__content-item">
                       <h6 className="navbar-dropdown__content-title">
                         AI Infrastructure
@@ -71,8 +80,8 @@ const NavbarMobile = () => {
                         <div className="navbar-dropdown__content-box-content">
                           <h6>IPU</h6>
                           <p>
-                            Infrastructure of servers designed to accelerate machine
-                            learning
+                            Infrastructure of servers designed to accelerate
+                            machine learning
                           </p>
                         </div>
                         <svg
@@ -99,8 +108,8 @@ const NavbarMobile = () => {
                         <div className="navbar-dropdown__content-box-content">
                           <h6>GPU</h6>
                           <p>
-                            Bare metal server and virtual machines with NVIDIO A100
-                            and H100 GPUS
+                            Bare metal server and virtual machines with NVIDIO
+                            A100 and H100 GPUS
                           </p>
                         </div>
                         <svg
@@ -120,7 +129,9 @@ const NavbarMobile = () => {
                           />
                         </svg>
                       </div>
-                      <h6 className="navbar-dropdown__content-title">AI Inference</h6>
+                      <h6 className="navbar-dropdown__content-title">
+                        AI Inference
+                      </h6>
                       <div className="navbar-dropdown__content-box mt-12 mb-32">
                         <div className="navbar-dropdown__content-box-img">
                           <img src={GPUImg} alt="" />
@@ -128,8 +139,8 @@ const NavbarMobile = () => {
                         <div className="navbar-dropdown__content-box-content">
                           <h6>Inference at the Edge</h6>
                           <p>
-                            Infrastructure of servers designed to accelerate machine
-                            learning
+                            Infrastructure of servers designed to accelerate
+                            machine learning
                           </p>
                         </div>
                         <svg
@@ -189,8 +200,8 @@ const NavbarMobile = () => {
                         <div className="navbar-dropdown__content-box-content">
                           <h6>Speech-to-Text Translator</h6>
                           <p>
-                            AI cloud and ML powered speech-to-text translation tool to
-                            translate English to Luxembourgish
+                            AI cloud and ML powered speech-to-text translation
+                            tool to translate English to Luxembourgish
                           </p>
                         </div>
                         <svg
@@ -295,7 +306,6 @@ const NavbarMobile = () => {
                 <img src={LeftImg} alt="" />
               </div>
             </div>
-            
           </div>
         </li>
         <li className="navbar__item">Pricing</li>
@@ -358,6 +368,6 @@ const NavbarMobile = () => {
         </li>
       </ul>
     </nav>
-  );
+  )
 }
 export default NavbarMobile

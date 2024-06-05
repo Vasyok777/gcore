@@ -1,3 +1,4 @@
+import {motion as m} from "framer-motion"
 import gsap from "gsap"
 import {useLayoutEffect, useState} from "react"
 import SplitType from "split-type"
@@ -17,12 +18,11 @@ import ItemImgOne from "../../assets/images/experience/item-one.svg"
 import ItemImgThree from "../../assets/images/experience/item-three.svg"
 import ItemImgTwo from "../../assets/images/experience/item-two.svg"
 import NavbarCustom from "../NavbarCustom"
-import { motion as m } from "framer-motion";
 
 import "./Experience.scss"
 
 const Experience = () => {
-  const animationDelay = 0.3;
+  const animationDelay = 0.3
   useLayoutEffect(() => {
     const ourText = new SplitType(".experience__title", {types: "words"})
     const chars = ourText.words
@@ -44,25 +44,25 @@ const Experience = () => {
       },
     )
   }, [])
-  const [inputValue, setInputValue] = useState('');
-  const [error, setError] = useState('');
+  const [inputValue, setInputValue] = useState("")
+  const [error, setError] = useState("")
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (inputValue.trim() === '') {
-      setError('Input cannot be empty');
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
+    if (inputValue.trim() === "") {
+      setError("Input cannot be empty")
     } else {
-      setError('');
+      setError("")
       // Handle the form submission logic
-      console.log('Form submitted with input:', inputValue);
+      console.log("Form submitted with input:", inputValue)
     }
-  };
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
+  }
+  const handleChange = (e: any) => {
+    setInputValue(e.target.value)
     if (error) {
-      setError('');
+      setError("")
     }
-  };
+  }
   return (
     <section className="experience">
       <div className="experience__inner">
@@ -83,20 +83,64 @@ const Experience = () => {
             </p>
             <div className="experience__box-ia">
               {[
-                { img: AiImgOne, alt: "Image 1", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgTwo, alt: "Image 2", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgThree, alt: "Image 3", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgFour, alt: "Image 4", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgFive, alt: "Image 5", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgSix, alt: "Image 6", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgSeven, alt: "Image 7", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
-                { img: AiImgEight, alt: "Image 8", label: "Image classification", description: "@cf/meta/llama-3-8b-instruct" },
+                {
+                  img: AiImgOne,
+                  alt: "Image 1",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgTwo,
+                  alt: "Image 2",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgThree,
+                  alt: "Image 3",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgFour,
+                  alt: "Image 4",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgFive,
+                  alt: "Image 5",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgSix,
+                  alt: "Image 6",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgSeven,
+                  alt: "Image 7",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
+                {
+                  img: AiImgEight,
+                  alt: "Image 8",
+                  label: "Image classification",
+                  description: "@cf/meta/llama-3-8b-instruct",
+                },
               ].map((item, index) => (
                 <m.div
                   key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeInOut", delay: index * animationDelay }}
+                  initial={{opacity: 0}}
+                  whileInView={{opacity: 1}}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                    delay: index * animationDelay,
+                  }}
                   className="experience__box-item"
                 >
                   <a href="#" className="experience__box-link">
@@ -111,9 +155,13 @@ const Experience = () => {
             </div>
             <div className="experience-content">
               <m.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeInOut", delay: 1 * animationDelay }}
+                initial={{y: 100, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: 1 * animationDelay,
+                }}
                 className="experience-content__wrapper"
               >
                 <div className="experience-content__top">
@@ -134,19 +182,43 @@ const Experience = () => {
                 </div>
                 <div className="experience-content__box">
                   {[
-                    { img: ItemImgOne, alt: "Item 1", title: "Text Generate", description: "A white rabbit on a black Harley Davidson riding down a desert road" },
-                    { img: ItemImgTwo, alt: "Item 2", title: "Generate Image", description: "A white rabbit on a black Harley Davidson riding down a desert road" },
-                    { img: ItemImgThree, alt: "Item 3", title: "Avatar Generate", description: "A white rabbit on a black Harley Davidson riding down a desert road" },
-                    { img: ItemImgFour, alt: "Item 4", title: "Speech recognition", description: "A white rabbit on a black Harley Davidson riding down a desert road" },
+                    {
+                      img: ItemImgOne,
+                      alt: "Item 1",
+                      title: "Text Generate",
+                      description:
+                        "A white rabbit on a black Harley Davidson riding down a desert road",
+                    },
+                    {
+                      img: ItemImgTwo,
+                      alt: "Item 2",
+                      title: "Generate Image",
+                      description:
+                        "A white rabbit on a black Harley Davidson riding down a desert road",
+                    },
+                    {
+                      img: ItemImgThree,
+                      alt: "Item 3",
+                      title: "Avatar Generate",
+                      description:
+                        "A white rabbit on a black Harley Davidson riding down a desert road",
+                    },
+                    {
+                      img: ItemImgFour,
+                      alt: "Item 4",
+                      title: "Speech recognition",
+                      description:
+                        "A white rabbit on a black Harley Davidson riding down a desert road",
+                    },
                   ].map((item, index) => (
                     <m.div
                       key={index}
-                      initial={{ y: 100, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
+                      initial={{y: 100, opacity: 0}}
+                      whileInView={{y: 0, opacity: 1}}
                       transition={{
                         duration: 1,
                         ease: "easeInOut",
-                        delay: index >= 1 ? 1 * animationDelay : 0
+                        delay: index >= 1 ? 1 * animationDelay : 0,
                       }}
                       className="experience-content__item"
                     >
@@ -161,11 +233,18 @@ const Experience = () => {
                   ))}
                 </div>
                 <m.div
-                  initial={{ y: 100, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeInOut", delay: 1 * animationDelay }}
+                  initial={{y: 100, opacity: 0}}
+                  whileInView={{y: 0, opacity: 1}}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                    delay: 1 * animationDelay,
+                  }}
                 >
-                  <form className="experience-content__form" onSubmit={handleSubmit}>
+                  <form
+                    className="experience-content__form"
+                    onSubmit={handleSubmit}
+                  >
                     <input
                       type="text"
                       placeholder="Write..."
@@ -191,7 +270,7 @@ const Experience = () => {
                       </svg>
                     </button>
                   </form>
-                  {error && <p style={{ color: 'red' }}>{error}</p>}
+                  {error && <p style={{color: "red"}}>{error}</p>}
                 </m.div>
                 <p className="experience-content__text">
                   Free Research Preview. May produce inaccurate information
