@@ -2,6 +2,7 @@ import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect, useRef} from "react"
 import SplitType from "split-type"
+import {motion as motion} from "framer-motion"
 
 import ImgFiveSvg from "../../../assets/images/faster/five-svg.svg"
 import ImgFourSvg from "../../../assets/images/faster/four-svg.svg"
@@ -92,6 +93,45 @@ const OneContent = () => {
 
     return () => ctx.revert()
   }, [])
+  const itemVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: (i) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.3 + 1.3, 
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    }),
+  };
+  const itemsOne = [
+    { imgSrc: ImgOneSvg, text: "Text generation" },
+    { imgSrc: ImgTwoSvg, text: "Image generation" },
+    { imgSrc: ImgThreeSvg, text: "Image classification" },
+    { imgSrc: ImgFourSvg, text: "Speech recognition" },
+    { imgSrc: ImgFiveSvg, text: "Text generation" },
+  ];
+  
+  const itemsTwo = [
+    { imgSrc: ImgFourSvg, text: "Speech recognition" },
+    { imgSrc: ImgFiveSvg, text: "Text generation" },
+    { imgSrc: ImgSixSvg, text: "Speech recognition" },
+    { imgSrc: ImgOneSvg, text: "Text generation" },
+    { imgSrc: ImgTwoSvg, text: "Image generation" },
+    { imgSrc: ImgThreeSvg, text: "Image classification" },
+  ];
+  
+  const itemsThree = [
+    { imgSrc: ImgTwoSvg, text: "Image generation" },
+    { imgSrc: ImgThreeSvg, text: "Image classification" },
+    { imgSrc: ImgFourSvg, text: "Speech recognition" },
+    { imgSrc: ImgSixSvg, text: "Speech recognition" },
+    { imgSrc: ImgSevenSvg, text: "Text generation" },
+    { imgSrc: ImgOneSvg, text: "Text generation" },
+    { imgSrc: ImgFiveSvg, text: "Text generation" },
+  ];
+  
   return (
     <div className="faster-one" ref={fasterOneRef}>
       <div className="faster-one__left">
@@ -122,120 +162,61 @@ const OneContent = () => {
         </div>
         <div className="faster-one__right-bottom">
           <div className="faster-one__right-one">
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgOneSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgTwoSvg} alt="" />
-              </div>
-              <p>Image generation   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgThreeSvg} alt="" />
-              </div>
-              <p>Image classification   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFourSvg} alt="" />
-              </div>
-              <p>Speech recognition   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFiveSvg} alt="" />
-              </div>
-              <p>Text generation  </p>
-            </div>
+            {itemsOne.map((item, index) => (
+              <motion.div
+                key={index}
+                className="faster-one__right-item"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={itemVariants}
+              >
+                <div className="faster-one__right-item-img">
+                  <img src={item.imgSrc} alt="" />
+                </div>
+                <p>{item.text}</p>
+              </motion.div>
+            ))}
           </div>
           <div className="faster-one__right-two">
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFourSvg} alt="" />
-              </div>
-              <p>Speech recognition</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFiveSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgSixSvg} alt="" />
-              </div>
-              <p>Speech recognition   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgOneSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgTwoSvg} alt="" />
-              </div>
-              <p>Image generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgThreeSvg} alt="" />
-              </div>
-              <p>Image classification   </p>
-            </div>
+            {itemsTwo.map((item, index) => (
+              <motion.div
+                key={index}
+                className="faster-one__right-item"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={itemVariants}
+              >
+                <div className="faster-one__right-item-img">
+                  <img src={item.imgSrc} alt="" />
+                </div>
+                <p>{item.text}</p>
+              </motion.div>
+            ))}
           </div>
           <div className="faster-one__right-three">
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgTwoSvg} alt="" />
-              </div>
-              <p>Image generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgThreeSvg} alt="" />
-              </div>
-              <p>Image classification   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFourSvg} alt="" />
-              </div>
-              <p>Speech recognition</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgSixSvg} alt="" />
-              </div>
-              <p>Speech recognition   </p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgSevenSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgOneSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
-            <div className="faster-one__right-item">
-              <div className="faster-one__right-item-img">
-                <img src={ImgFiveSvg} alt="" />
-              </div>
-              <p>Text generation</p>
-            </div>
+            {itemsThree.map((item, index) => (
+              <motion.div
+                key={index}
+                className="faster-one__right-item"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={itemVariants}
+              >
+                <div className="faster-one__right-item-img">
+                  <img src={item.imgSrc} alt="" />
+                </div>
+                <p>{item.text}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
+
       </div>
     </div>
   )

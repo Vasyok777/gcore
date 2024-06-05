@@ -86,10 +86,12 @@ const Faster = () => {
               Use AI faster and more efficiently right on your device!
             </h2>
           </m.div>
+        
           <m.div
-            initial={{y: 100, opacity: 0}}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{duration: 1, ease: "easeInOut"}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             className="faster-content"
           >
             {state === 1 ? <OneContent /> : <TwoContent />}

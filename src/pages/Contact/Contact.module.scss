@@ -143,6 +143,14 @@
     padding: 16px;
     border-radius: 24px;
   }
+  &__flex__selects {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    div {
+      width: 100%;
+    }
+  }
   &__button {
     border-radius: 67px;
     border: 0.656px solid rgba(191, 191, 191, 0.6);

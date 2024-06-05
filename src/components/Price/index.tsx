@@ -17,6 +17,48 @@ import "./Price.scss"
 
 const Price = () => {
   const [activeToggle, setActiveToggle] = useState(true)
+  const animationDelay = 0.3;
+  const items = [
+    {
+      undertext: "1x NVIDIA L40S GPU",
+      price: activeToggle ? "€2.40" : "$2.80",
+      priceSuffix: "/month",
+      list: [
+        { img: OneImg, text: "16vCPU memory" },
+        { img: TwoImg, text: "48GB GPU memory" },
+        { img: ThreeImg, text: "232GB RAM" },
+        { img: FourImg, text: "4B–21B parameters", tooltip: TooltipImg }
+      ],
+      orderText: "Order Now"
+    },
+    {
+      undertext: "2x NVIDIA L40S GPU",
+      price: activeToggle ? "€9.30" : "$10.40",
+      priceSuffix: "/month",
+      list: [
+        { img: OneImg, text: "96GB GPU memory" },
+        { img: TwoImg, text: "32vCPU" },
+        { img: ThreeImg, text: "464GB RAM" },
+        { img: FourImg, text: "21B–41B parameters", tooltip: TooltipImg }
+      ],
+      orderText: "Order Now",
+      center: true,
+      decor: DecorImg
+    },
+    {
+      undertext: "2x NVIDIA L40S GPU",
+      price: activeToggle ? "€4.70" : "$5.40",
+      priceSuffix: "/month",
+      list: [
+        { img: OneImg, text: "192GB GPU memory" },
+        { img: TwoImg, text: "64vCPU" },
+        { img: ThreeImg, text: "928GB RAM" },
+        { img: FourImg, text: "41B–70B parameters", tooltip: TooltipImg }
+      ],
+      orderText: "Order Now"
+    }
+  ];
+
   gsap.registerPlugin(ScrollTrigger)
   useLayoutEffect(() => {
     const ourText = new SplitType(".price__title", {types: "words"})
@@ -75,91 +117,37 @@ const Price = () => {
             </h2>
           </m.div>
           <div className="price__inner">
-            <div className="price-item">
-              <div className="price-item__undertext">1x NVIDIA L40S GPU</div>
-              <div className="price-item__price">
-                {activeToggle ? "€2.40" : "$2.80"} <span>/month</span>
-              </div>
-              <ul className="price-item__list">
-                <li className="price-item__list-item">
-                  <img src={OneImg} alt="" />
-                  <span>16vCPU memory</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={TwoImg} alt="" />
-                  <span>48GB GPU memory</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={ThreeImg} alt="" />
-                  <span>232GB RAM</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={FourImg} alt="" />
-                  <span> 4B–21B parameters</span>
-                  <img src={TooltipImg} alt="" />
-                </li>
-              </ul>
-              <a href="#" className="price-item__order">
-                Order Now
-              </a>
-            </div>
-            <div className="price-item center">
-              <img src={DecorImg} className="price-item__decor" alt="" />
-              <div className="price-item__undertext">2x NVIDIA L40S GPU </div>
-              <div className="price-item__price">
-                {activeToggle ? "€9.30" : "$10.40"} <span>/month</span>
-              </div>
-              <ul className="price-item__list">
-                <li className="price-item__list-item">
-                  <img src={OneImg} alt="" />
-                  <span>96GB GPU memory</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={TwoImg} alt="" />
-                  <span>32vCPU</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={ThreeImg} alt="" />
-                  <span>464GB RAM</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={FourImg} alt="" />
-                  <span> 21B–41B parameters</span>
-                  <img src={TooltipImg} alt="" />
-                </li>
-              </ul>
-              <a href="#" className="price-item__order">
-                Order Now
-              </a>
-            </div>
-            <div className="price-item">
-              <div className="price-item__undertext">2x NVIDIA L40S GPU  </div>
-              <div className="price-item__price">
-                {activeToggle ? "€4.70" : "$5.40"} <span>/month</span>
-              </div>
-              <ul className="price-item__list">
-                <li className="price-item__list-item">
-                  <img src={OneImg} alt="" />
-                  <span>192GB GPU memory</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={TwoImg} alt="" />
-                  <span>64vCPU</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={ThreeImg} alt="" />
-                  <span>928GB RAM</span>
-                </li>
-                <li className="price-item__list-item">
-                  <img src={FourImg} alt="" />
-                  <span> 41B–70B parameters</span>
-                  <img src={TooltipImg} alt="" />
-                </li>
-              </ul>
-              <a href="#" className="price-item__order">
-                Order Now
-              </a>
-            </div>
+            {items.map((item, index) => (
+              <m.div
+                key={index}
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: index * animationDelay
+                }}
+                className={`price-item ${item.center ? "center" : ""}`}
+              >
+                {item.decor && <img src={item.decor} className="price-item__decor" alt="" />}
+                <div className="price-item__undertext">{item.undertext}</div>
+                <div className="price-item__price">
+                  {item.price} <span>{item.priceSuffix}</span>
+                </div>
+                <ul className="price-item__list">
+                  {item.list.map((listItem, idx) => (
+                    <li key={idx} className="price-item__list-item">
+                      <img src={listItem.img} alt="" />
+                      <span>{listItem.text}</span>
+                      {listItem.tooltip && <img src={listItem.tooltip} alt="" />}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#" className="price-item__order">
+                  {item.orderText}
+                </a>
+              </m.div>
+            ))}
           </div>
           <div className="price-bottom">
             <p>

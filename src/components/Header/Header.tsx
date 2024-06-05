@@ -1,15 +1,22 @@
+import { useState } from "react"
 import AppLogo from "../ul/AppLogo/AppLogo"
 
 import "./Header.scss"
 import Navbar from "./Navbar"
+import NavbarMobile from "./NavbarMobile"
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const handleMenu = () => setShowMenu(!showMenu)
   return (
-    <header className="header">
+    <header className={`header ${showMenu ? "active" : ""}`}>
       <div className="container">
         <div className="header__wrapper">
           <AppLogo />
           <Navbar />
+          <div className={`navbar-mobile ${showMenu ? 'show' : ''}`}>
+            <NavbarMobile />
+          </div>
           <div className="header-button">
             <a href="#" className="header-button__contact btn">
               Contact us
@@ -22,7 +29,7 @@ const Header = () => {
             <a href="#" className="header-mob__button-book">
               Book a demo
             </a>
-            <div className="header-mob__button-burger">
+            <div className="header-mob__button-burger" onClick={handleMenu}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"

@@ -1,0 +1,52 @@
+.navbarMobile {
+  position: absolute;
+  left: -1px;
+  top: 88px;
+  z-index: 10;
+  background-color: #060607;
+  width: 101%;
+  padding: 15px;
+  .navbar-dropdown__left {
+    max-width: 100%;
+  }
+  .navbar-dropdown {
+    border-radius: 0;
+  }
+  .navbar-dropdown__content {
+    display: none;
+    overflow-y: auto;
+  }
+  .navbar__item:hover .navbar-dropdown {
+    max-height: fit-content;
+    display: block;
+  }
+  .navbar-dropdown__item:hover + .navbar-dropdown__content {
+    display: block;
+  }
+  .navbar-dropdown__content.active {
+    display: block;
+  }
+  .navbar-dropdown.active {
+    display: block;
+  }
+}
+
+
+.navbar-mobile {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  display: none;
+}
+
+.navbar-mobile.show {
+  opacity: 1;
+  max-height: 1000px; /* Задайте желаемую максимальную высоту */
+}
+@media (max-width: 996px) {
+  .navbar-mobile {
+    display: block;
+  }
+}
+

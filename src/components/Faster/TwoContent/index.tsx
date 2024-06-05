@@ -1,4 +1,7 @@
-import {useState} from "react"
+import {useLayoutEffect, useRef, useState} from "react"
+import {motion as m} from "framer-motion"
+import gsap from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 import FasterOne from "../../../assets/images/faster/box-1.svg"
 import FasterTwo from "../../../assets/images/faster/box-2.svg"
@@ -12,15 +15,99 @@ import ImgTwo from "../../../assets/images/faster/tabs-two.png"
 import FasterMiniLine from "./FasterMiniLine"
 import FasterMiniLineMob from "./FasterMiniLineMob"
 import "./TwoContent.scss"
+import SplitType from "split-type"
 
 const TwoContent = () => {
   const [isClassAdded, setIsClassAdded] = useState(false)
   const handleClick = () => {
     setIsClassAdded((prev) => !prev)
   }
+  const fasterOneRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const linesText = new SplitType(".faster-two__left h6", {
+        types: "lines",
+      })
+      const linesTextVideo = new SplitType(".faster-two__left-text", {
+        types: "lines",
+      })
+      const chart = new SplitType(".faster-two__left-text-bottom p", {
+        types: "lines",
+      })
+      const charsLines = linesText.lines
+      const charsLinesVideo = linesTextVideo.lines
+      const chars = chart.lines
+      gsap.fromTo(
+        charsLines,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+      gsap.fromTo(
+        charsLinesVideo,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1.5,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+      gsap.fromTo(
+        chars,
+        {
+          y: 20,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          delay: 1.5,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: fasterOneRef.current,
+            toggleActions: "restart none restart none",
+          },
+        },
+      )
+    }, fasterOneRef)
+
+    return () => ctx.revert()
+  }, [])
   return (
     <div className="faster-two">
-      <div className="faster-two__left">
+      <m.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 100, opacity: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="faster-two__left"
+      >
         <h6>
           Here’s an example of how Inference at the Edge works in European
           locations. The approach is broadly relevant worldwide.
@@ -32,15 +119,27 @@ const TwoContent = () => {
           nearby Amsterdam inference region, whereas an end user in Schweinfurt
           is routed to Frankfurt (see “Basic query-result route.”)  
         </p>
-        <div className="faster-two__left-text-bottom">
+        <m.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="faster-two__left-text-bottom"
+        >
           <p>
             If the Amsterdam region is unavailable for some reason, its edge
             node will redirect the user’s query to the next closest region in
             Frankfurt (see “Alternative query-result route.”)
           </p>
-        </div>
-      </div>
-      <div className="faster-two__right">
+        </m.div>
+      </m.div>
+      <m.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 100, opacity: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="faster-two__right"
+      >
         <img src={ImgTwo} alt="" className="faster-two__right-img" />
         <div className="faster-two__right-box">
           <div
@@ -142,7 +241,7 @@ const TwoContent = () => {
             </svg>
           </div>
         </div>
-      </div>
+      </m.div>
     </div>
   )
 }

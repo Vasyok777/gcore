@@ -2,6 +2,7 @@ import gsap from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {useLayoutEffect} from "react"
 import SplitType from "split-type"
+import { motion as m } from "framer-motion";
 
 import OneImg from "../../assets/images/flexible/1.png"
 import TwoImg from "../../assets/images/flexible/2.png"
@@ -15,6 +16,41 @@ import "./Flexible.scss"
 gsap.registerPlugin(ScrollTrigger)
 
 const Flexible = () => {
+  const animationDelay = 0.3;
+  const items = [
+    { img: OneImg, alt: "Image 1", title: "IT / Technology", content: [
+      "Generative AI applications",
+      "Chatbots and virtual assistants",
+      "AI tools for software engineers",
+      "AI tools for software engineers",
+    ]},
+    { img: TwoImg, alt: "Image 2", title: "Retail", content: [
+      "Smart grocery with self-checkout and merchandising",
+      "Real-time user behavior analysis and active feedback: content generation, predictions, recommendations",
+    ]},
+    { img: ThreeImg, alt: "Image 3", title: "Automotive", content: [
+      "Fast response to changes in road conditions and incidents in self-driving vehicles",
+      "Advanced driver assistants",
+      "Vehicle personalization",
+    ]},
+    { img: FourImg, alt: "Image 4", title: "Gaming", content: [
+      "AI content and map generation",
+      "AI bot real-time customization and conversation",
+      "Real-time player analytics",
+    ]},
+    { img: FiveImg, alt: "Image 5", title: "Hospitality", content: [
+      "Personalized destination and accommodation recommendations",
+      "Smart inventory management",
+      "Efficiency improvements in areas like waste reduction and energy management",
+    ]},
+    { img: SixImg, alt: "Image 6", title: "Manufacturing", content: [
+      "Real-time defect detection in production pipelines",
+      "Rapid response feedback",
+      "AI tools for software engineers",
+      "Prevention of bottlenecks",
+    ]},
+  ];
+
   useLayoutEffect(() => {
     const ourText = new SplitType(".flexible__title", {types: "words"})
     const chars = ourText.words
@@ -101,96 +137,31 @@ const Flexible = () => {
             </h2>
           </div>
           <div className="flexible__inner">
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={OneImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>IT / Technology</h6>
-                <ul>
-                  <li>Generative AI applications </li>
-                  <li>Chatbots and virtual assistants  </li>
-                  <li>AI tools for software engineers  </li>
-                  <li>AI tools for software engineers  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={TwoImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>Retail</h6>
-                <ul>
-                  <li>Smart grocery with self-checkout and merchandising </li>
-                  <li>
-                    Real-time user behavior analysis and active feedback:
-                    content generation, predictions, recommendations  
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={ThreeImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>Automotive</h6>
-                <ul>
-                  <li>
-                    Fast response to changes in road conditions and incidents in
-                    self-driving vehicles
-                  </li>
-                  <li>Advanced driver assistants </li>
-                  <li>Vehicle personalization  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={FourImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>Gaming</h6>
-                <ul>
-                  <li>AI content and map generation </li>
-                  <li>AI bot real-time customization and conversation </li>
-                  <li>Real-time player analytics  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={FiveImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>Hospitality</h6>
-                <ul>
-                  <li>
-                    Personalized destination and accommodation recommendations
-                  </li>
-                  <li>Smart inventory management   </li>
-                  <li>
-                    Efficiency improvements in areas like waste reduction and
-                    energy management 
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flexible__item">
-              <div className="flexible__item-img">
-                <img src={SixImg} alt="" />
-              </div>
-              <div className="flexible__item-content">
-                <h6>Manufacturing</h6>
-                <ul>
-                  <li>Real-time defect detection in production pipelines </li>
-                  <li>Rapid response feedback  </li>
-                  <li>AI tools for software engineers  </li>
-                  <li>Prevention of bottlenecks  </li>
-                </ul>
-              </div>
-            </div>
+            {items.map((item, index) => (
+              <m.div
+                key={index}
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: index * animationDelay
+                }}
+                className="flexible__item"
+              >
+                <div className="flexible__item-img">
+                  <img src={item.img} alt={item.alt} />
+                </div>
+                <div className="flexible__item-content">
+                  <h6>{item.title}</h6>
+                  <ul>
+                    {item.content.map((text, idx) => (
+                      <li key={idx}>{text}</li>
+                    ))}
+                  </ul>
+                </div>
+              </m.div>
+            ))}
           </div>
         </div>
       </div>
