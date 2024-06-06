@@ -15,6 +15,7 @@ export interface ISelectProps {
   onChange?: (value: string | undefined) => void
   className?: string
   style?: React.CSSProperties
+  value?: any
 }
 
 const Select: React.ForwardRefRenderFunction<HTMLDivElement, ISelectProps> = (
@@ -28,7 +29,7 @@ const Select: React.ForwardRefRenderFunction<HTMLDivElement, ISelectProps> = (
 
   const handleSelect = (
     value: string | undefined,
-    label: string | undefined,
+    label?: string | undefined | any,
   ) => {
     setSelectedValue(value)
     onChange && onChange(value)

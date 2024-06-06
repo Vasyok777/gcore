@@ -55,7 +55,7 @@ const Flexible = () => {
     const ourText = new SplitType(".flexible__title", {types: "words"})
     const chars = ourText.words
     const tl = gsap.timeline()
-    tl.fromTo(".flexible-title__wrapper", {scale: 1.1}, {scale: 1, duration: 1})
+    tl.fromTo(".flexible-title__wrapper", {scale: 1.1}, {scale: 1, duration: 0.5})
     gsap.fromTo(
       chars,
       {

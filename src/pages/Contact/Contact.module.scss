@@ -218,3 +218,39 @@
   bottom: 0;
   top: 31%;
 }
+
+
+.checkout {
+  display: flex;
+  align-items: center;
+}
+
+.checkout input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(191, 191, 191, 0.6);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin-left: 2px;
+}
+
+
+.checkout input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid #ff4c00;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkout span {
+  margin-left: 10px;
+  font-size: 14px;
+}

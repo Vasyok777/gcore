@@ -109,7 +109,7 @@ const Price = () => {
           <m.div
             initial={{scale: 1.3}}
             whileInView={{scale: 1}}
-            transition={{duration: 2, ease: "easeInOut"}}
+            transition={{duration: 1, ease: "easeInOut"}}
             className="price__title-wrapper"
           >
             <h2 className="price__title">
@@ -123,7 +123,7 @@ const Price = () => {
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
-                  duration: 1,
+                  duration:0.5,
                   ease: "easeInOut",
                   delay: index * animationDelay
                 }}

@@ -81,7 +81,7 @@ const Promo = () => {
           <m.div
             initial={{scale: 1.1}}
             whileInView={{scale: 1}}
-            transition={{duration: 1, ease: "easeIn"}}
+            transition={{duration: 0.5, ease: "easeIn"}}
             className="promo__title-wrapper"
           >
             <h1 className="promo__title">Inference at the Edge</h1>
@@ -89,7 +89,7 @@ const Promo = () => {
           <m.div
             initial={{scale: 1.1}}
             whileInView={{scale: 1}}
-            transition={{duration: 1, ease: "easeIn"}}
+            transition={{duration: 0.5, ease: "easeIn"}}
             className="promo__text-wrapper"
           >
             <p className="promo__text">
@@ -102,7 +102,7 @@ const Promo = () => {
             <m.a
               initial={{y: 30, opacity: 0}}
               whileInView={{y: 0, opacity: 1}}
-              transition={{duration: 1, ease: "easeInOut"}}
+              transition={{duration: 0.5, ease: "easeInOut"}}
               href="#"
               className="btn-accent"
             >
@@ -111,7 +111,7 @@ const Promo = () => {
             <m.a
               initial={{y: 30, opacity: 0}}
               whileInView={{y: 0, opacity: 1}}
-              transition={{duration: 1, delay: 0.2, ease: "easeInOut"}}
+              transition={{duration: 0.5, delay: 0.2, ease: "easeInOut"}}
               href="#"
               className="promo__btn"
             >

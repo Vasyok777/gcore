@@ -103,7 +103,7 @@ const Asked = () => {
           <m.div
             initial={{scale: 1.1}}
             whileInView={{scale: 1}}
-            transition={{duration: 1, delay: 1, ease: "easeInOut"}}
+            transition={{duration: 0.5, delay: 0.5, ease: "easeInOut"}}
             className="asked__title-wrapper"
           >
             <h2 className="asked__title">Frequently asked questions </h2>

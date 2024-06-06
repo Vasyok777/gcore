@@ -5,7 +5,6 @@ import {useLayoutEffect, useRef} from "react"
 import SplitType from "split-type"
 
 import GlobalImg from "../../assets/images/global_nerwork/gloge.svg"
-import PlanetImg from "../../assets/images/global_nerwork/planet.png"
 
 import "./GlobalNetwork.scss"
 
@@ -72,7 +71,7 @@ const GlobalNetwork = () => {
           <m.div
             initial={{scale: 1.1}}
             whileInView={{scale: 1}}
-            transition={{duration: 1, ease: "easeIn"}}
+            transition={{duration: 0.5, ease: "easeIn"}}
             className="global-network__title-wrapper"
           >
             <h2 className="global-network__title">
@@ -82,7 +81,7 @@ const GlobalNetwork = () => {
           <m.div
             initial={{scale: 1.1}}
             whileInView={{scale: 1}}
-            transition={{duration: 1, ease: "easeIn"}}
+            transition={{duration: 0.5, ease: "easeIn"}}
           >
             <p className="global-network__text">
               Gcore global network consists of more than 160 locations, allowing
@@ -90,12 +89,18 @@ const GlobalNetwork = () => {
             </p>
           </m.div>
           <div>
-            <img src={PlanetImg} alt="" />
+            <video
+              src="/src/assets/video/planet.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
           <m.div
             initial={{y: 40, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
-            transition={{duration: 1, ease: "easeIn"}}
+            transition={{duration: 0.5, ease: "easeIn"}}
           >
             <div className="global-network__bottom">
               <div className="global-network__bottom-box">

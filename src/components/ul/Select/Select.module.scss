@@ -21,6 +21,12 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  position: relative;
+  svg {
+    position: absolute;
+    bottom: 28px;
+    right: 16px;
+  }
   &::placeholder {
     color: #7e7e7e;
     font-size: 14px;

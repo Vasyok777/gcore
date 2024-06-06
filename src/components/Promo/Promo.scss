@@ -152,13 +152,17 @@
     align-items: flex-start;
     gap: 10px;
     color: #fff2ea;
-
     text-align: center;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.25px;
+    transition: all 300ms;
+    &:hover {
+      border-color: transparent;
+      background-color: rgba(33, 30, 29, 0.47);
+    }
   }
 }
 .promo__text-span {

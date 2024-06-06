@@ -137,7 +137,7 @@ const Experience = () => {
                   initial={{opacity: 0}}
                   whileInView={{opacity: 1}}
                   transition={{
-                    duration: 1,
+                    duration: 0.5,
                     ease: "easeInOut",
                     delay: index * animationDelay,
                   }}
@@ -158,9 +158,9 @@ const Experience = () => {
                 initial={{y: 100, opacity: 0}}
                 whileInView={{y: 0, opacity: 1}}
                 transition={{
-                  duration: 1,
+                  duration: 0.5,
                   ease: "easeInOut",
-                  delay: 1 * animationDelay,
+                  delay: 0.5 * animationDelay,
                 }}
                 className="experience-content__wrapper"
               >
@@ -216,9 +216,9 @@ const Experience = () => {
                       initial={{y: 100, opacity: 0}}
                       whileInView={{y: 0, opacity: 1}}
                       transition={{
-                        duration: 1,
+                        duration: 0.5,
                         ease: "easeInOut",
-                        delay: index >= 1 ? 1 * animationDelay : 0,
+                        delay: index >= 1 ? 0.5 * animationDelay : 0,
                       }}
                       className="experience-content__item"
                     >
@@ -236,9 +236,9 @@ const Experience = () => {
                   initial={{y: 100, opacity: 0}}
                   whileInView={{y: 0, opacity: 1}}
                   transition={{
-                    duration: 1,
+                    duration: 0.5,
                     ease: "easeInOut",
-                    delay: 1 * animationDelay,
+                    delay: 0.5 * animationDelay,
                   }}
                 >
                   <form

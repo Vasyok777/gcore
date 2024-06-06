@@ -172,7 +172,7 @@ const FooterTop = () => {
           <m.p
             initial={{opacity: 0, y: 10}}
             whileInView={{opacity: 1, y: 0}}
-            transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+            transition={{delay: 0.2, duration: 0.5, ease: "easeInOut"}}
             className="footer-top__left-text"
           >
             Powerful solutions to help your business grow globally. Experience

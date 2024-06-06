@@ -43,7 +43,7 @@ const OneContent = () => {
           autoAlpha: 1,
           stagger: 0.2,
           duration: 0.4,
-          delay: 1,
+          delay: 0.5,
           ease: "linear",
           scrollTrigger: {
             trigger: fasterOneRef.current,
@@ -62,7 +62,7 @@ const OneContent = () => {
           autoAlpha: 1,
           stagger: 0.2,
           duration: 0.4,
-          delay: 1.5,
+          delay: 0.5,
           ease: "linear",
           scrollTrigger: {
             trigger: fasterOneRef.current,
@@ -81,7 +81,7 @@ const OneContent = () => {
           autoAlpha: 1,
           stagger: 0.2,
           duration: 0.4,
-          delay: 1.5,
+          delay: 0.5,
           ease: "linear",
           scrollTrigger: {
             trigger: fasterOneRef.current,

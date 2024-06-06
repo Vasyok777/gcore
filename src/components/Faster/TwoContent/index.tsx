@@ -105,7 +105,7 @@ const TwoContent = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className="faster-two__left"
       >
         <h6>
@@ -123,7 +123,7 @@ const TwoContent = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="faster-two__left-text-bottom"
         >
           <p>
@@ -137,7 +137,7 @@ const TwoContent = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className="faster-two__right"
       >
         <img src={ImgTwo} alt="" className="faster-two__right-img" />

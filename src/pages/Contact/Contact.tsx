@@ -16,29 +16,35 @@ interface IData {
   product?: string | number
   message?: string | number
 }
+
 const Contact = () => {
   const {
-    register: formRegister,
+    register,
+    control,
     handleSubmit,
     reset,
     formState: {errors},
-  } = useForm({
+  } = useForm<IData>({
     mode: "onChange",
   })
+
   const onSubmit: SubmitHandler<IData> = (data) => {
     console.log(data)
     reset()
   }
+
   const countryOptions = [
     {value: "United States", label: "United States"},
     {value: "Canada", label: "Canada"},
     {value: "France", label: "France"},
   ]
+
   const productOptions = [
     {value: "1x NVIDIA L40S GPU", label: "1x NVIDIA L40S GPU"},
     {value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU"},
-    {value: "2x NVIDIA L40S GPU", label: "2x NVIDIA L40S GPU"},
+    {value: "4x NVIDIA L40S GPU", label: "4x NVIDIA L40S GPU"}, // Сделаем ключ уникальным
   ]
+
   return (
     <main className={styles.contact}>
       <div className={clsx(styles.container, "container")}>
@@ -85,30 +91,30 @@ const Contact = () => {
               <Field
                 placeholder="Full name*"
                 error={errors.name?.message}
-                {...formRegister("name", {
+                {...register("name", {
                   required: "Please complete this required field.",
                 })}
               />
               <Field
                 placeholder="Company*"
                 error={errors.company?.message}
-                {...formRegister("company", {
+                {...register("company", {
                   required: "Please complete this required field.",
                 })}
               />
               <Field
                 placeholder="Website URL"
                 error={errors.website?.message}
-                {...formRegister("website")}
+                {...register("website")}
               />
               <Field
                 placeholder="Email*"
                 error={errors.email?.message}
-                {...formRegister("email", {
+                {...register("email", {
                   required: "Please complete this required field.",
                   pattern: {
                     value:
-                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     message: "Please enter a valid email address",
                   },
                 })}
@@ -116,32 +122,34 @@ const Contact = () => {
               <Field
                 placeholder="Phone number"
                 error={errors.phone?.message}
-                {...formRegister("phone")}
+                {...register("phone")}
               />
               <div className={styles["form__flex__selects"]}>
                 <Controller
                   name="country"
-                  // control={control}
+                  control={control}
                   rules={{required: "Please complete this required field."}}
                   render={({field}) => (
                     <Select
                       placeholder="Country*"
                       error={errors.country?.message}
                       options={countryOptions}
-                      onChange={field.onChange} // Adapt onChange
+                      onChange={field.onChange}
+                      value={field.value}
                     />
                   )}
                 />
                 <Controller
                   name="product"
-                  // control={control}
+                  control={control}
                   rules={{required: "Please complete this required field."}}
                   render={({field}) => (
                     <Select
                       placeholder="Product*"
                       error={errors.product?.message}
                       options={productOptions}
-                      {...field}
+                      onChange={field.onChange}
+                      value={field.value}
                     />
                   )}
                 />
@@ -149,12 +157,14 @@ const Contact = () => {
               <textarea
                 className={styles.textarea}
                 placeholder="Message"
-                {...formRegister("message")}
+                {...register("message")}
               ></textarea>
               <label className={styles.checkout}>
                 <input type="checkbox" />
-                I'd like to receive Gcore updates on product news, blog
-                articles, and other related information.
+                <span>
+                  I'd like to receive Gcore updates on product news, blog
+                  articles, and other related information.
+                </span>
               </label>
               <button className={styles.form__button}>Submit</button>
             </form>
@@ -164,4 +174,5 @@ const Contact = () => {
     </main>
   )
 }
+
 export default Contact

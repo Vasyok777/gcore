@@ -14,7 +14,7 @@ const FooterCenter = () => {
         <m.div
           initial={{opacity: 0, scale: 0}}
           whileInView={{opacity: 1, scale: 1}}
-          transition={{duration: 0.8, ease: "easeInOut"}}
+          transition={{duration: 0.4, ease: "easeInOut"}}
           className="footer-center__partner"
         >
           <img src={MadeImg} alt="" />
@@ -22,7 +22,7 @@ const FooterCenter = () => {
         <m.div
           initial={{opacity: 0, scale: 0}}
           whileInView={{opacity: 1, scale: 1}}
-          transition={{duration: 0.8, delay: 0.1, ease: "easeInOut"}}
+          transition={{duration: 0.4, delay: 0.1, ease: "easeInOut"}}
           className="footer-center__partner"
         >
           <img src={EcoImg} alt="" />
@@ -30,7 +30,7 @@ const FooterCenter = () => {
         <m.div
           initial={{opacity: 0, scale: 0}}
           whileInView={{opacity: 1, scale: 1}}
-          transition={{duration: 0.8, delay: 0.2, ease: "easeInOut"}}
+          transition={{duration: 0.4, delay: 0.2, ease: "easeInOut"}}
           className="footer-center__partner"
         >
           <img src={WorldImg} alt="" />
@@ -39,7 +39,7 @@ const FooterCenter = () => {
       <m.p
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
-        transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+        transition={{delay: 0.2, duration: 0.5, ease: "easeInOut"}}
         className="footer-center__text"
       >
         Subscribe to discover the latest updates, news, and features
@@ -47,7 +47,7 @@ const FooterCenter = () => {
       <m.form
         initial={{opacity: 0, y: 30}}
         whileInView={{opacity: 1, y: 0}}
-        transition={{delay: 0.2, duration: 1, ease: "easeInOut"}}
+        transition={{delay: 0.2, duration: 0.5, ease: "easeInOut"}}
         className="footer-center__form"
       >
         <input type="email" placeholder="Enter your E-mail" />
