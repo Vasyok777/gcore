@@ -7,6 +7,7 @@ import ThreeVideo from "../../assets/video/potential_3.MP4"
 import FourVideo from "../../assets/video/potential_4.MP4"
 import FiveVideo from "../../assets/video/potential_5.MP4"
 import SevenVideo from "../../assets/video/potential_7.MP4"
+import SixVideo from "../../assets/video/video2.mp4"
 import NavbarCustom from "../NavbarCustom"
 
 import "./Potential.scss"
@@ -177,13 +178,7 @@ const Potential = () => {
                 }}
                 className="potential-box__item"
               >
-                <video
-                  src="/src/assets/video/video2.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
+                <video src={SixVideo} autoPlay muted loop playsInline />
                 <div className="potential-box__item-content">
                   <h6>Model autoscaling </h6>
                   <p>

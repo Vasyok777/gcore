@@ -5,6 +5,7 @@ import {useLayoutEffect, useRef} from "react"
 import SplitType from "split-type"
 
 import GlobalImg from "../../assets/images/global_nerwork/gloge.svg"
+import GlobalVideo from "../../assets/video/planet.mp4"
 
 import "./GlobalNetwork.scss"
 
@@ -89,13 +90,7 @@ const GlobalNetwork = () => {
             </p>
           </m.div>
           <div>
-            <video
-              src="/src/assets/video/planet.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <video src={GlobalVideo} autoPlay muted loop playsInline />
           </div>
           <m.div
             initial={{y: 40, opacity: 0}}
